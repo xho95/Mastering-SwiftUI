@@ -15,35 +15,40 @@ struct CardView: View {
     
     var body: some View {
         VStack {
-            Image(image)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
+            VStack {
+                Image(image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
 
-            HStack {
-                VStack(alignment: .leading) {
-                    Text(category)
-                        .font(.headline)
-                        .foregroundColor(.secondary)
-                    Text(heading)
-                        .font(.title)
-                        .fontWeight(.black)
-                        .foregroundColor(.primary)
-                        .lineLimit(3)
-                    Text("Written by \(author)".uppercased())
-                        .font(.caption)
-                        .foregroundColor(.secondary)
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text(category)
+                            .font(.headline)
+                            .foregroundColor(.secondary)
+                        Text(heading)
+                            .font(.title)
+                            .fontWeight(.black)
+                            .foregroundColor(.primary)
+                            .lineLimit(3)
+                            .minimumScaleFactor(0.5)
+                        Text("Written by \(author)".uppercased())
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                    }
+
+                    Spacer()
                 }
-
-                Spacer()
+                .padding()
             }
-            .padding()
+            .cornerRadius(10)
+            .overlay(
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255), lineWidth: 1)
+            )
+            .padding([.top, .horizontal])
+            
+            Spacer()
         }
-        .cornerRadius(10)
-        .overlay(
-            RoundedRectangle(cornerRadius: 10)
-                .stroke(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255), lineWidth: 1)
-        )
-        .padding([.top, .horizontal])
     }
 }
 

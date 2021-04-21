@@ -12,6 +12,7 @@
 		161ED08D26304CDA002F8260 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 161ED08C26304CDA002F8260 /* Assets.xcassets */; };
 		161ED09026304CDA002F8260 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 161ED08F26304CDA002F8260 /* Preview Assets.xcassets */; };
 		161ED09926304D0E002F8260 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161ED09826304D0E002F8260 /* CardView.swift */; };
+		161ED0A0263057F5002F8260 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161ED09F263057F5002F8260 /* CarouselView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		161ED08F26304CDA002F8260 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		161ED09126304CDA002F8260 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		161ED09826304D0E002F8260 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		161ED09F263057F5002F8260 /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				161ED08826304CD8002F8260 /* SwiftUIScrollViewApp.swift */,
 				161ED08A26304CD8002F8260 /* ContentView.swift */,
+				161ED09F263057F5002F8260 /* CarouselView.swift */,
 				161ED09826304D0E002F8260 /* CardView.swift */,
 				161ED08C26304CDA002F8260 /* Assets.xcassets */,
 				161ED09126304CDA002F8260 /* Info.plist */,
@@ -143,6 +146,7 @@
 			files = (
 				161ED08B26304CD8002F8260 /* ContentView.swift in Sources */,
 				161ED09926304D0E002F8260 /* CardView.swift in Sources */,
+				161ED0A0263057F5002F8260 /* CarouselView.swift in Sources */,
 				161ED08926304CD8002F8260 /* SwiftUIScrollViewApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

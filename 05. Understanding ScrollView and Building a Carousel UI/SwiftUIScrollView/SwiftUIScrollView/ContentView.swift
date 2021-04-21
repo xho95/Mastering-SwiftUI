@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-    
     func refineDate() -> String {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
