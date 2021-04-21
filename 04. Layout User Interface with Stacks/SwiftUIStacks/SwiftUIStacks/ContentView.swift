@@ -18,7 +18,7 @@ struct ContentView: View {
                 ZStack {
                     PricingView(title: "Pro", price: "$19", textColor: .black, bgColor: Color(red: 240/255, green: 240/255, blue: 240/255))
                     
-                    LabelView(label: "Best for designer", yOffset: 87)
+                    LabelView(label: "Best for designer", yOffset: 90)
                 }
             }
             .padding()
@@ -26,9 +26,11 @@ struct ContentView: View {
             ZStack {
                 PricingView(icon: "wand.and.rays", title: "Team", price: "$299", textColor: .white, bgColor: Color(red: 50/255, green: 50/255, blue: 50/255))
                 
-                LabelView(label: "Perfect for teams with 20 members", yOffset: 92)
+                LabelView(label: "Perfect for teams with 20 members", yOffset: 90)
             }
             .padding(.horizontal)
+            
+            Spacer()
         }
     }
 }
@@ -41,14 +43,19 @@ struct ContentView_Previews: PreviewProvider {
 
 struct HeaderView: View {
     var body: some View {
-        VStack(alignment: .leading, spacing: 2) {
-            Text("Choose")
-                .font(.system(.largeTitle, design: .rounded))
-                .fontWeight(.black)
-            Text("Your Plan")
-                .font(.system(.largeTitle, design: .rounded))
-                .fontWeight(.black)
+        HStack {
+            VStack(alignment: .leading, spacing: 2) {
+                Text("Choose")
+                    .font(.system(.largeTitle, design: .rounded))
+                    .fontWeight(.black)
+                Text("Your Plan")
+                    .font(.system(.largeTitle, design: .rounded))
+                    .fontWeight(.black)
+            }
+            
+            Spacer()
         }
+        .padding()
     }
 }
 
