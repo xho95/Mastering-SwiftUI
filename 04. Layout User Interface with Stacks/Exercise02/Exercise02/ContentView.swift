@@ -9,8 +9,31 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ZStack {
+            VStack {
+                Spacer()
+
+                IconPricingView(icon: "burst.fill", title: "Basic", price: "9", textColor: .white, bgColor: .purple)
+                    .padding(.horizontal, 30)
+            }
+
+            VStack {
+                Spacer()
+                
+                IconPricingView(icon: "dial.min", title: "Pro", price: "$19", textColor: .white, bgColor: Color(red: 255/255, green: 183/255, blue: 37/255))
+                    .padding(.horizontal, 40)
+
+                Spacer()
+            }
+
+            VStack {
+                IconPricingView(icon: "wand.and.rays", title: "Team", price: "$299", textColor: .white, bgColor: Color(red: 50/255, green: 50/255, blue: 50/255))
+                    .padding(.horizontal, 50)
+
+                Spacer()
+            }
+        }
+        .frame(height: 600)
     }
 }
 
@@ -20,7 +43,7 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-struct PricingView: View {
+struct IconPricingView: View {
     var icon: String?
     
     var title: String
@@ -30,13 +53,6 @@ struct PricingView: View {
     
     var body: some View {
         VStack {
-            /*
-            if let icon = icon {
-                Image(systemName: icon)
-                    .font(.largeTitle)
-                    .foregroundColor(textColor)
-            }
-            */
             icon.map {
                 Image(systemName: $0)
                     .font(.largeTitle)
@@ -54,23 +70,8 @@ struct PricingView: View {
                 .foregroundColor(textColor)
         }
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 100)
-        .padding(icon == nil ? 40 : 20)
+        .padding(40)
         .background(bgColor)
         .cornerRadius(10)
-    }
-}
-
-struct LabelView: View {
-    var label: String
-    var yOffset: CGFloat
-    
-    var body: some View {
-        Text(label)
-            .font(.system(.caption, design: .rounded))
-            .fontWeight(.bold)
-            .foregroundColor(.white)
-            .padding(5)
-            .background(Color(red: 255/255, green: 183/255, blue: 37/255))
-            .offset(x: 0, y: yOffset)
     }
 }
