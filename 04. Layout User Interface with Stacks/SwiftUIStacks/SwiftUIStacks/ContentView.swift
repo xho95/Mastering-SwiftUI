@@ -12,12 +12,23 @@ struct ContentView: View {
         VStack {
             HeaderView()
             
-            HStack {
+            HStack(spacing: 15) {
                 PricingView(title: "Basic", price: "$9", textColor: .white, bgColor: .purple)
 
-                PricingView(title: "Pro", price: "$19", textColor: .black, bgColor: Color(red: 240/255, green: 240/255, blue: 240/255))                
+                ZStack {
+                    PricingView(title: "Pro", price: "$19", textColor: .black, bgColor: Color(red: 240/255, green: 240/255, blue: 240/255))
+                    
+                    LabelView(label: "Best for designer", yOffset: 87)
+                }
             }
             .padding()
+
+            ZStack {
+                PricingView(symbol: "wand.and.rays", title: "Team", price: "$299", textColor: .white, bgColor: Color(red: 50/255, green: 50/255, blue: 50/255))
+                
+                LabelView(label: "Perfect for teams with 20 members", yOffset: 92)
+            }
+            .padding(.horizontal)
         }
     }
 }
@@ -42,6 +53,8 @@ struct HeaderView: View {
 }
 
 struct PricingView: View {
+    var symbol: String?
+    
     var title: String
     var price: String
     var textColor: Color
@@ -49,6 +62,11 @@ struct PricingView: View {
     
     var body: some View {
         VStack {
+            if let symbol = symbol {
+                Image(systemName: symbol)
+                    .font(.system(size: 40))
+                    .foregroundColor(textColor)
+            }
             Text(title)
                 .font(.system(.title, design: .rounded))
                 .fontWeight(.black)
@@ -61,8 +79,23 @@ struct PricingView: View {
                 .foregroundColor(textColor)
         }
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 100)
-        .padding(40)
+        .padding(symbol == nil ? 40 : 20)
         .background(bgColor)
         .cornerRadius(10)
+    }
+}
+
+struct LabelView: View {
+    var label: String
+    var yOffset: CGFloat
+    
+    var body: some View {
+        Text(label)
+            .font(.system(.caption, design: .rounded))
+            .fontWeight(.bold)
+            .foregroundColor(.white)
+            .padding(5)
+            .background(Color(red: 255/255, green: 183/255, blue: 37/255))
+            .offset(x: 0, y: yOffset)
     }
 }
