@@ -24,7 +24,7 @@ struct ContentView: View {
             .padding()
 
             ZStack {
-                PricingView(symbol: "wand.and.rays", title: "Team", price: "$299", textColor: .white, bgColor: Color(red: 50/255, green: 50/255, blue: 50/255))
+                PricingView(icon: "wand.and.rays", title: "Team", price: "$299", textColor: .white, bgColor: Color(red: 50/255, green: 50/255, blue: 50/255))
                 
                 LabelView(label: "Perfect for teams with 20 members", yOffset: 92)
             }
@@ -53,7 +53,7 @@ struct HeaderView: View {
 }
 
 struct PricingView: View {
-    var symbol: String?
+    var icon: String?
     
     var title: String
     var price: String
@@ -62,9 +62,16 @@ struct PricingView: View {
     
     var body: some View {
         VStack {
-            if let symbol = symbol {
-                Image(systemName: symbol)
-                    .font(.system(size: 40))
+            /*
+            if let icon = icon {
+                Image(systemName: icon)
+                    .font(.largeTitle)
+                    .foregroundColor(textColor)
+            }
+            */
+            icon.map {
+                Image(systemName: $0)
+                    .font(.largeTitle)
                     .foregroundColor(textColor)
             }
             Text(title)
@@ -79,7 +86,7 @@ struct PricingView: View {
                 .foregroundColor(textColor)
         }
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 100)
-        .padding(symbol == nil ? 40 : 20)
+        .padding(icon == nil ? 40 : 20)
         .background(bgColor)
         .cornerRadius(10)
     }
