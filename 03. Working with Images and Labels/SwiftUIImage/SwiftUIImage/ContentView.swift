@@ -34,6 +34,7 @@ struct ContentView: View {
             )
         */
         
+        /*
         Image("paris")
             .resizable()
             .aspectRatio(contentMode: .fit)
@@ -48,6 +49,19 @@ struct ContentView: View {
                     .opacity(0.8)
                     .padding(),
                 alignment: .top
+            )
+        */
+        
+        Image("paris")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .overlay(
+                Color.black.opacity(0.4)
+                /*
+                Rectangle()
+                    .foregroundColor(.black)
+                    .opacity(0.4)
+                */
             )
     }
 }
