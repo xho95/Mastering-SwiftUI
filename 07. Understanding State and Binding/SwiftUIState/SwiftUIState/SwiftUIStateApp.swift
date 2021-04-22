@@ -12,7 +12,8 @@ struct SwiftUIStateApp: App {
     var body: some Scene {
         WindowGroup {
             //ContentView()
-            CounterButtonView()
+            //CounterButtonView()
+            IndividualCountersView()
         }
     }
 }

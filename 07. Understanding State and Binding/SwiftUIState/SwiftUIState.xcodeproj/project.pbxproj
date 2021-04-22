@@ -13,6 +13,8 @@
 		163E5D69263159080079D1AF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 163E5D68263159080079D1AF /* Preview Assets.xcassets */; };
 		163E5D7226315A7B0079D1AF /* CounterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163E5D7126315A7B0079D1AF /* CounterButton.swift */; };
 		163E5D7626315DC80079D1AF /* CounterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163E5D7526315DC80079D1AF /* CounterButtonView.swift */; };
+		163E5D7C2631603C0079D1AF /* IndividualCounterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163E5D7B2631603C0079D1AF /* IndividualCounterButton.swift */; };
+		163E5D83263161000079D1AF /* IndividualCountersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163E5D82263161000079D1AF /* IndividualCountersView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		163E5D6A263159080079D1AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		163E5D7126315A7B0079D1AF /* CounterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterButton.swift; sourceTree = "<group>"; };
 		163E5D7526315DC80079D1AF /* CounterButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterButtonView.swift; sourceTree = "<group>"; };
+		163E5D7B2631603C0079D1AF /* IndividualCounterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualCounterButton.swift; sourceTree = "<group>"; };
+		163E5D82263161000079D1AF /* IndividualCountersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualCountersView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				163E5D63263159070079D1AF /* ContentView.swift */,
 				163E5D7526315DC80079D1AF /* CounterButtonView.swift */,
 				163E5D7126315A7B0079D1AF /* CounterButton.swift */,
+				163E5D82263161000079D1AF /* IndividualCountersView.swift */,
+				163E5D7B2631603C0079D1AF /* IndividualCounterButton.swift */,
 				163E5D65263159080079D1AF /* Assets.xcassets */,
 				163E5D6A263159080079D1AF /* Info.plist */,
 				163E5D67263159080079D1AF /* Preview Content */,
@@ -148,6 +154,8 @@
 				163E5D7626315DC80079D1AF /* CounterButtonView.swift in Sources */,
 				163E5D7226315A7B0079D1AF /* CounterButton.swift in Sources */,
 				163E5D62263159070079D1AF /* SwiftUIStateApp.swift in Sources */,
+				163E5D83263161000079D1AF /* IndividualCountersView.swift in Sources */,
+				163E5D7C2631603C0079D1AF /* IndividualCounterButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
