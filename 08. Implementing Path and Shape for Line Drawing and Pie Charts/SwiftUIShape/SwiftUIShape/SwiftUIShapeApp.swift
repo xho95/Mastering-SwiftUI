@@ -15,7 +15,13 @@ struct SwiftUIShapeApp: App {
             //PurpleDome()
             //ArcAndPie()
             //ShapeProtocol()
-            DomeButton()
+            //DomeButton()
+            VStack {
+                ProgressIndicator()
+                    .padding(.vertical, 50)
+                DonutChart()
+                    .padding(.vertical, 50)
+            }
         }
     }
 }

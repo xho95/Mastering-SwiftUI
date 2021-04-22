@@ -16,6 +16,8 @@
 		166E0D412631828900E35C4E /* ShapeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166E0D402631828900E35C4E /* ShapeProtocol.swift */; };
 		166E0D45263183DA00E35C4E /* Dome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166E0D44263183DA00E35C4E /* Dome.swift */; };
 		166E0D48263184A400E35C4E /* DomeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166E0D47263184A400E35C4E /* DomeButton.swift */; };
+		166E0D4C263186A600E35C4E /* ProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166E0D4B263186A600E35C4E /* ProgressIndicator.swift */; };
+		166E0D512631896B00E35C4E /* DonutChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166E0D502631896B00E35C4E /* DonutChart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		166E0D402631828900E35C4E /* ShapeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeProtocol.swift; sourceTree = "<group>"; };
 		166E0D44263183DA00E35C4E /* Dome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dome.swift; sourceTree = "<group>"; };
 		166E0D47263184A400E35C4E /* DomeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomeButton.swift; sourceTree = "<group>"; };
+		166E0D4B263186A600E35C4E /* ProgressIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressIndicator.swift; sourceTree = "<group>"; };
+		166E0D502631896B00E35C4E /* DonutChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonutChart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 				166E0D402631828900E35C4E /* ShapeProtocol.swift */,
 				166E0D47263184A400E35C4E /* DomeButton.swift */,
 				166E0D44263183DA00E35C4E /* Dome.swift */,
+				166E0D4B263186A600E35C4E /* ProgressIndicator.swift */,
+				166E0D502631896B00E35C4E /* DonutChart.swift */,
 				166E0D2B26317BAA00E35C4E /* Assets.xcassets */,
 				166E0D3026317BAA00E35C4E /* Info.plist */,
 				166E0D2D26317BAA00E35C4E /* Preview Content */,
@@ -153,10 +159,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				166E0D512631896B00E35C4E /* DonutChart.swift in Sources */,
 				166E0D2A26317BA900E35C4E /* GreenRectangle.swift in Sources */,
 				166E0D3D26317F9B00E35C4E /* ArcAndPie.swift in Sources */,
 				166E0D412631828900E35C4E /* ShapeProtocol.swift in Sources */,
 				166E0D2826317BA900E35C4E /* SwiftUIShapeApp.swift in Sources */,
+				166E0D4C263186A600E35C4E /* ProgressIndicator.swift in Sources */,
 				166E0D45263183DA00E35C4E /* Dome.swift in Sources */,
 				166E0D48263184A400E35C4E /* DomeButton.swift in Sources */,
 				166E0D3926317D6000E35C4E /* PurpleDome.swift in Sources */,
