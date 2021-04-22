@@ -12,6 +12,7 @@
 		163E5D66263159080079D1AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 163E5D65263159080079D1AF /* Assets.xcassets */; };
 		163E5D69263159080079D1AF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 163E5D68263159080079D1AF /* Preview Assets.xcassets */; };
 		163E5D7226315A7B0079D1AF /* CounterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163E5D7126315A7B0079D1AF /* CounterButton.swift */; };
+		163E5D7626315DC80079D1AF /* CounterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163E5D7526315DC80079D1AF /* CounterButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		163E5D68263159080079D1AF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		163E5D6A263159080079D1AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		163E5D7126315A7B0079D1AF /* CounterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterButton.swift; sourceTree = "<group>"; };
+		163E5D7526315DC80079D1AF /* CounterButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				163E5D61263159070079D1AF /* SwiftUIStateApp.swift */,
 				163E5D63263159070079D1AF /* ContentView.swift */,
+				163E5D7526315DC80079D1AF /* CounterButtonView.swift */,
 				163E5D7126315A7B0079D1AF /* CounterButton.swift */,
 				163E5D65263159080079D1AF /* Assets.xcassets */,
 				163E5D6A263159080079D1AF /* Info.plist */,
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				163E5D64263159070079D1AF /* ContentView.swift in Sources */,
+				163E5D7626315DC80079D1AF /* CounterButtonView.swift in Sources */,
 				163E5D7226315A7B0079D1AF /* CounterButton.swift in Sources */,
 				163E5D62263159070079D1AF /* SwiftUIStateApp.swift in Sources */,
 			);

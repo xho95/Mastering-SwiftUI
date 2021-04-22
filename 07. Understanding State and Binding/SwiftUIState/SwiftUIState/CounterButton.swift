@@ -8,18 +8,20 @@
 import SwiftUI
 
 struct CounterButton: View {
-    @State private var count = 0
+    @Binding var counter: Int
+    
+    var color: Color = .gray
     
     var body: some View {
         Button {
-            self.count += 1
+            self.counter += 1
         } label: {
             Circle()
                 .frame(width: 200, height: 200)
-                .foregroundColor(.red)
+                .foregroundColor(color)
                 .overlay(
-                    Text("\(count)")
-                        .font(.system(size: 100, design: .rounded))
+                    Text("\(counter)")
+                        .font(.system(size: 100, weight: .bold, design: .rounded))
                         .foregroundColor(.white)
                 )
         }
@@ -28,6 +30,6 @@ struct CounterButton: View {
 
 struct CounterButton_Previews: PreviewProvider {
     static var previews: some View {
-        CounterButton()
+        CounterButton(counter: .constant(1), color: .red)
     }
 }

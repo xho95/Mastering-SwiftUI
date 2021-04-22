@@ -11,8 +11,8 @@ import SwiftUI
 struct SwiftUIStateApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
-            CounterButton()
+            //ContentView()
+            CounterButtonView()
         }
     }
 }
