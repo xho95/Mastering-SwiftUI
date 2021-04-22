@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		163E5D50263154670079D1AF /* AnimatingPlusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163E5D4F263154670079D1AF /* AnimatingPlusButton.swift */; };
 		16D6803F26313E1B005B346F /* SwiftUIButtonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D6803E26313E1B005B346F /* SwiftUIButtonApp.swift */; };
 		16D6804126313E1B005B346F /* LabelButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D6804026313E1B005B346F /* LabelButtonView.swift */; };
 		16D6804326313E1C005B346F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16D6804226313E1C005B346F /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		163E5D4F263154670079D1AF /* AnimatingPlusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatingPlusButton.swift; sourceTree = "<group>"; };
 		16D6803B26313E1B005B346F /* SwiftUIButton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIButton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16D6803E26313E1B005B346F /* SwiftUIButtonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIButtonApp.swift; sourceTree = "<group>"; };
 		16D6804026313E1B005B346F /* LabelButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelButtonView.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 				16D6803E26313E1B005B346F /* SwiftUIButtonApp.swift */,
 				16D6804026313E1B005B346F /* LabelButtonView.swift */,
 				16D6804F26314BD2005B346F /* GradientButtonView.swift */,
+				163E5D4F263154670079D1AF /* AnimatingPlusButton.swift */,
 				16D6804226313E1C005B346F /* Assets.xcassets */,
 				16D6804726313E1C005B346F /* Info.plist */,
 				16D6804426313E1C005B346F /* Preview Content */,
@@ -143,6 +146,7 @@
 			files = (
 				16D6804126313E1B005B346F /* LabelButtonView.swift in Sources */,
 				16D6805026314BD2005B346F /* GradientButtonView.swift in Sources */,
+				163E5D50263154670079D1AF /* AnimatingPlusButton.swift in Sources */,
 				16D6803F26313E1B005B346F /* SwiftUIButtonApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

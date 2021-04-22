@@ -12,7 +12,10 @@ struct SwiftUIButtonApp: App {
     var body: some Scene {
         WindowGroup {
             //LabelButtonView()
-            GradientButtonView()
+            VStack {
+                GradientButtonView()
+                AnimatingPlusButton()
+            }
         }
     }
 }
