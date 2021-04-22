@@ -11,6 +11,7 @@
 		16D6804126313E1B005B346F /* LabelButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D6804026313E1B005B346F /* LabelButtonView.swift */; };
 		16D6804326313E1C005B346F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16D6804226313E1C005B346F /* Assets.xcassets */; };
 		16D6804626313E1C005B346F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16D6804526313E1C005B346F /* Preview Assets.xcassets */; };
+		16D6805026314BD2005B346F /* GradientButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D6804F26314BD2005B346F /* GradientButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		16D6804226313E1C005B346F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16D6804526313E1C005B346F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		16D6804726313E1C005B346F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16D6804F26314BD2005B346F /* GradientButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				16D6803E26313E1B005B346F /* SwiftUIButtonApp.swift */,
 				16D6804026313E1B005B346F /* LabelButtonView.swift */,
+				16D6804F26314BD2005B346F /* GradientButtonView.swift */,
 				16D6804226313E1C005B346F /* Assets.xcassets */,
 				16D6804726313E1C005B346F /* Info.plist */,
 				16D6804426313E1C005B346F /* Preview Content */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16D6804126313E1B005B346F /* LabelButtonView.swift in Sources */,
+				16D6805026314BD2005B346F /* GradientButtonView.swift in Sources */,
 				16D6803F26313E1B005B346F /* SwiftUIButtonApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

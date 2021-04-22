@@ -11,7 +11,8 @@ import SwiftUI
 struct SwiftUIButtonApp: App {
     var body: some Scene {
         WindowGroup {
-            LabelButtonView()
+            //LabelButtonView()
+            GradientButtonView()
         }
     }
 }
