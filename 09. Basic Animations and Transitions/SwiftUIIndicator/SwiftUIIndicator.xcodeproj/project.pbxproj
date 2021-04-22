@@ -14,6 +14,7 @@
 		16C054D52631A88D00F87A5F /* CircularIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C054D12631A88D00F87A5F /* CircularIndicator.swift */; };
 		16C054D62631A88D00F87A5F /* LinearIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C054D22631A88D00F87A5F /* LinearIndicator.swift */; };
 		16C054D72631A88D00F87A5F /* DotIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C054D32631A88D00F87A5F /* DotIndicator.swift */; };
+		16C054DB2631A9D100F87A5F /* MorphingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C054DA2631A9D100F87A5F /* MorphingButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		16C054D12631A88D00F87A5F /* CircularIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularIndicator.swift; sourceTree = "<group>"; };
 		16C054D22631A88D00F87A5F /* LinearIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinearIndicator.swift; sourceTree = "<group>"; };
 		16C054D32631A88D00F87A5F /* DotIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotIndicator.swift; sourceTree = "<group>"; };
+		16C054DA2631A9D100F87A5F /* MorphingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorphingButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				16C054D32631A88D00F87A5F /* DotIndicator.swift */,
 				16C054D22631A88D00F87A5F /* LinearIndicator.swift */,
 				16C054D02631A88D00F87A5F /* ProgressIndicator.swift */,
+				16C054DA2631A9D100F87A5F /* MorphingButton.swift */,
 				16C054C42631A85500F87A5F /* Assets.xcassets */,
 				16C054C92631A85500F87A5F /* Info.plist */,
 				16C054C62631A85500F87A5F /* Preview Content */,
@@ -148,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16C054D52631A88D00F87A5F /* CircularIndicator.swift in Sources */,
+				16C054DB2631A9D100F87A5F /* MorphingButton.swift in Sources */,
 				16C054D62631A88D00F87A5F /* LinearIndicator.swift in Sources */,
 				16C054D42631A88D00F87A5F /* ProgressIndicator.swift in Sources */,
 				16C054C12631A85300F87A5F /* SwiftUIIndicatorApp.swift in Sources */,

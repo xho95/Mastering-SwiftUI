@@ -20,6 +20,8 @@ struct SwiftUIIndicatorApp: App {
                     .padding(.vertical, 25)
                 DotIndicator()
                     .padding(.vertical, 25)
+                MorphingButton()
+                    .padding(.vertical, 25)
             }
         }
     }
