@@ -11,7 +11,8 @@ import SwiftUI
 struct SwiftUIScrollViewApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            //ContentView()
+            CarouselView()
         }
     }
 }
