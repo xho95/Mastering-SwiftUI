@@ -14,20 +14,15 @@ struct CounterButton: View {
         Button {
             self.count += 1
         } label: {
-            Text("\(count)")
-                .font(.system(size: 100, design: .rounded))
+            Circle()
+                .frame(width: 200, height: 200)
+                .foregroundColor(.red)
+                .overlay(
+                    Text("\(count)")
+                        .font(.system(size: 100, design: .rounded))
+                        .foregroundColor(.white)
+                )
         }
-        .buttonStyle(CounterButtonStyle())
-    }
-}
-
-struct CounterButtonStyle: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .padding()
-            .background(Color.red)
-            .foregroundColor(.white)
-            .clipShape(Circle())
     }
 }
 
