@@ -23,6 +23,7 @@ struct GradientButtonView: View {
                         .font(.title)
                 }
             )
+            .frame(minWidth: 0, maxWidth: .infinity)
             .padding()
             .foregroundColor(.white)
             .background(
@@ -31,7 +32,7 @@ struct GradientButtonView: View {
                                endPoint: .trailing)
             )
             .cornerRadius(40)
-            .shadow(color: .gray, radius: 20.0, x: 20, y: 10)
+            .padding(.horizontal, 20)
         }
     }
 }
