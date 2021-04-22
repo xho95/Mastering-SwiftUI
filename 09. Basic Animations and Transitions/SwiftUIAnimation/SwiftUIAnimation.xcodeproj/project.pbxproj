@@ -8,18 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		166E0D6226318F5100E35C4E /* SwiftUIAnimationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166E0D6126318F5100E35C4E /* SwiftUIAnimationApp.swift */; };
-		166E0D6426318F5100E35C4E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166E0D6326318F5100E35C4E /* ContentView.swift */; };
+		166E0D6426318F5100E35C4E /* ImplicitAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166E0D6326318F5100E35C4E /* ImplicitAnimation.swift */; };
 		166E0D6626318F5300E35C4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 166E0D6526318F5300E35C4E /* Assets.xcassets */; };
 		166E0D6926318F5300E35C4E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 166E0D6826318F5300E35C4E /* Preview Assets.xcassets */; };
+		16C0548526319B4200F87A5F /* ExplicitAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C0548426319B4200F87A5F /* ExplicitAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		166E0D5E26318F5100E35C4E /* SwiftUIAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		166E0D6126318F5100E35C4E /* SwiftUIAnimationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIAnimationApp.swift; sourceTree = "<group>"; };
-		166E0D6326318F5100E35C4E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		166E0D6326318F5100E35C4E /* ImplicitAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImplicitAnimation.swift; sourceTree = "<group>"; };
 		166E0D6526318F5300E35C4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		166E0D6826318F5300E35C4E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		166E0D6A26318F5300E35C4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16C0548426319B4200F87A5F /* ExplicitAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplicitAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +55,8 @@
 			isa = PBXGroup;
 			children = (
 				166E0D6126318F5100E35C4E /* SwiftUIAnimationApp.swift */,
-				166E0D6326318F5100E35C4E /* ContentView.swift */,
+				166E0D6326318F5100E35C4E /* ImplicitAnimation.swift */,
+				16C0548426319B4200F87A5F /* ExplicitAnimation.swift */,
 				166E0D6526318F5300E35C4E /* Assets.xcassets */,
 				166E0D6A26318F5300E35C4E /* Info.plist */,
 				166E0D6726318F5300E35C4E /* Preview Content */,
@@ -138,8 +141,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				166E0D6426318F5100E35C4E /* ContentView.swift in Sources */,
+				166E0D6426318F5100E35C4E /* ImplicitAnimation.swift in Sources */,
 				166E0D6226318F5100E35C4E /* SwiftUIAnimationApp.swift in Sources */,
+				16C0548526319B4200F87A5F /* ExplicitAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
