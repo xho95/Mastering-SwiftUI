@@ -13,6 +13,9 @@
 		166E0D2F26317BAA00E35C4E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 166E0D2E26317BAA00E35C4E /* Preview Assets.xcassets */; };
 		166E0D3926317D6000E35C4E /* PurpleDome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166E0D3826317D6000E35C4E /* PurpleDome.swift */; };
 		166E0D3D26317F9B00E35C4E /* ArcAndPie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166E0D3C26317F9B00E35C4E /* ArcAndPie.swift */; };
+		166E0D412631828900E35C4E /* ShapeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166E0D402631828900E35C4E /* ShapeProtocol.swift */; };
+		166E0D45263183DA00E35C4E /* Dome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166E0D44263183DA00E35C4E /* Dome.swift */; };
+		166E0D48263184A400E35C4E /* DomeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166E0D47263184A400E35C4E /* DomeButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		166E0D3026317BAA00E35C4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		166E0D3826317D6000E35C4E /* PurpleDome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpleDome.swift; sourceTree = "<group>"; };
 		166E0D3C26317F9B00E35C4E /* ArcAndPie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcAndPie.swift; sourceTree = "<group>"; };
+		166E0D402631828900E35C4E /* ShapeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeProtocol.swift; sourceTree = "<group>"; };
+		166E0D44263183DA00E35C4E /* Dome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dome.swift; sourceTree = "<group>"; };
+		166E0D47263184A400E35C4E /* DomeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomeButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,9 @@
 				166E0D2926317BA900E35C4E /* GreenRectangle.swift */,
 				166E0D3826317D6000E35C4E /* PurpleDome.swift */,
 				166E0D3C26317F9B00E35C4E /* ArcAndPie.swift */,
+				166E0D402631828900E35C4E /* ShapeProtocol.swift */,
+				166E0D47263184A400E35C4E /* DomeButton.swift */,
+				166E0D44263183DA00E35C4E /* Dome.swift */,
 				166E0D2B26317BAA00E35C4E /* Assets.xcassets */,
 				166E0D3026317BAA00E35C4E /* Info.plist */,
 				166E0D2D26317BAA00E35C4E /* Preview Content */,
@@ -146,7 +155,10 @@
 			files = (
 				166E0D2A26317BA900E35C4E /* GreenRectangle.swift in Sources */,
 				166E0D3D26317F9B00E35C4E /* ArcAndPie.swift in Sources */,
+				166E0D412631828900E35C4E /* ShapeProtocol.swift in Sources */,
 				166E0D2826317BA900E35C4E /* SwiftUIShapeApp.swift in Sources */,
+				166E0D45263183DA00E35C4E /* Dome.swift in Sources */,
+				166E0D48263184A400E35C4E /* DomeButton.swift in Sources */,
 				166E0D3926317D6000E35C4E /* PurpleDome.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

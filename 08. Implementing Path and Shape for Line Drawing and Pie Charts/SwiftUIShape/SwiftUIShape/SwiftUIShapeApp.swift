@@ -13,7 +13,9 @@ struct SwiftUIShapeApp: App {
         WindowGroup {
             //GreenRectangle()
             //PurpleDome()
-            ArcAndPie()
+            //ArcAndPie()
+            //ShapeProtocol()
+            DomeButton()
         }
     }
 }
