@@ -9,8 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        List(articles) { article in
-            ArticleRow(article: article)
+        NavigationView {
+            List(articles) { article in
+                NavigationLink(destination: ArticleDetail(article: article)) {
+                    ArticleRow(article: article)
+                }
+            }
+            .navigationTitle("Your Reading")
         }
     }
 }

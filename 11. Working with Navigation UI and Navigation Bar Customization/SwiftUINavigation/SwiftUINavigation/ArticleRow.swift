@@ -21,7 +21,7 @@ struct ArticleRow: View {
                 .font(.system(.title, design: .rounded))
                 .fontWeight(.black)
                 .lineLimit(3)
-                .padding(.bottom, 0)
+                .padding(.bottom, 5)
             
             Text("By \(article.author)".uppercased())
                 .font(.subheadline)
