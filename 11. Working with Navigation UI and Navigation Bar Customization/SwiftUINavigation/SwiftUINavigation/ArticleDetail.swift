@@ -33,6 +33,8 @@ struct ArticleDetail: View {
             }
             .padding()
         }
+        .navigationTitle("")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

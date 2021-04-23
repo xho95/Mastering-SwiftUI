@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SolutionDetail: View {
+    @Environment(\.presentationMode) var presentationMode
+    
     var article: Article
     
     var body: some View {
@@ -37,6 +39,18 @@ struct SolutionDetail: View {
                     .multilineTextAlignment(.leading)
             }
         }
+        .ignoresSafeArea(.all, edges: .top)
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(
+            leading: Button {
+                self.presentationMode.wrappedValue.dismiss()
+            } label: {
+                Image(systemName: "chevron.left.circle.fill")
+                    .font(.largeTitle)
+                    .foregroundColor(.white)
+            }
+        )
+        //.navigationBarHidden(true)
     }
 }
 
