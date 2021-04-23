@@ -11,7 +11,6 @@
 		16B4D4CF26329B4400494BD7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B4D4CE26329B4400494BD7 /* ContentView.swift */; };
 		16B4D4D126329B4600494BD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16B4D4D026329B4600494BD7 /* Assets.xcassets */; };
 		16B4D4D426329B4600494BD7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16B4D4D326329B4600494BD7 /* Preview Assets.xcassets */; };
-		16B4D4DE2632A3FF00494BD7 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B4D4DC2632A3FF00494BD7 /* CarouselView.swift */; };
 		16B4D4DF2632A3FF00494BD7 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B4D4DD2632A3FF00494BD7 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
@@ -22,7 +21,6 @@
 		16B4D4D026329B4600494BD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16B4D4D326329B4600494BD7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		16B4D4D526329B4600494BD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		16B4D4DC2632A3FF00494BD7 /* CarouselView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
 		16B4D4DD2632A3FF00494BD7 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -57,7 +55,6 @@
 			isa = PBXGroup;
 			children = (
 				16B4D4DD2632A3FF00494BD7 /* CardView.swift */,
-				16B4D4DC2632A3FF00494BD7 /* CarouselView.swift */,
 				16B4D4CC26329B4400494BD7 /* CardTransitionApp.swift */,
 				16B4D4CE26329B4400494BD7 /* ContentView.swift */,
 				16B4D4D026329B4600494BD7 /* Assets.xcassets */,
@@ -145,7 +142,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				16B4D4CF26329B4400494BD7 /* ContentView.swift in Sources */,
-				16B4D4DE2632A3FF00494BD7 /* CarouselView.swift in Sources */,
 				16B4D4DF2632A3FF00494BD7 /* CardView.swift in Sources */,
 				16B4D4CD26329B4400494BD7 /* CardTransitionApp.swift in Sources */,
 			);

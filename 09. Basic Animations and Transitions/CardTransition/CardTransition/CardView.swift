@@ -15,40 +15,48 @@ struct CardView: View {
     
     var body: some View {
         VStack {
-            VStack {
-                Image(image)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
+            Image(image)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
 
+            VStack(alignment: .leading) {
+                Text(category)
+                    .font(.headline)
+                    .foregroundColor(.secondary)
+                
+                Text(heading)
+                    .font(.title)
+                    .fontWeight(.black)
+                    .foregroundColor(.primary)
+                    .lineLimit(3)
+                    .minimumScaleFactor(0.5)
+                
+                Text("Written by \(author)".uppercased())
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+                
                 HStack {
-                    VStack(alignment: .leading) {
-                        Text(category)
-                            .font(.headline)
-                            .foregroundColor(.secondary)
-                        Text(heading)
-                            .font(.title)
-                            .fontWeight(.black)
-                            .foregroundColor(.primary)
-                            .lineLimit(3)
-                            .minimumScaleFactor(0.5)
-                        Text("Written by \(author)".uppercased())
+                    ForEach(0...4, id: \.self) { _ in
+                        Image(systemName: "star.fill")
                             .font(.caption)
-                            .foregroundColor(.secondary)
+                            .foregroundColor(.yellow)
                     }
-
-                    Spacer()
                 }
-                .padding()
+                .padding(.vertical)
+
+                Text("This is something to explain this card. However, I don't know exactly what is is, because there is no sentence in the book at all. So you may think it is just something to describe the title. ")
+                    .lineLimit(10)
+                    .font(.caption)
+                    .foregroundColor(.secondary)
             }
-            .cornerRadius(10)
-            .overlay(
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255), lineWidth: 1)
-            )
-            .padding([.top, .horizontal])
-            
-            Spacer()
+            .padding()
         }
+        .cornerRadius(10)
+        .overlay(
+            RoundedRectangle(cornerRadius: 10)
+                .stroke(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255), lineWidth: 1)
+        )
+        .padding(.horizontal)
     }
 }
 
