@@ -34,37 +34,45 @@ struct ContentView: View {
     ]
     
     var body: some View {
-        List {
-            ForEach(restaurants) { restaurant in
-                BasicImageRow(restaurant: restaurant)
+        NavigationView {
+            List {
+                ForEach(restaurants) { restaurant in
+                    NavigationLink(destination: RestaurantDetail(restaurant: restaurant)) {
+                        BasicImageRow(restaurant: restaurant)
+                    }
+                }
             }
+            .navigationTitle("Restaurants")
+            .navigationBarTitleDisplayMode(.automatic)
         }
+    }
+    
+    init() {
+        let barAppearance = UINavigationBarAppearance()
+        
+        barAppearance.largeTitleTextAttributes = [
+            .foregroundColor: UIColor.systemRed,
+            .font: UIFont(name: "ArialRoundedMTBold", size: 35)!
+        ]
+        
+        barAppearance.titleTextAttributes = [
+            .foregroundColor: UIColor.systemRed,
+            .font: UIFont(name: "ArialRoundedMTBold", size: 20)!
+        ]
+        
+        barAppearance.setBackIndicatorImage(UIImage(systemName: "arrow.turn.up.left"), transitionMaskImage: UIImage(systemName: "arrow.turn.up.left"))
+        
+        UINavigationBar.appearance().standardAppearance = barAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = barAppearance
+        UINavigationBar.appearance().compactAppearance = barAppearance
+        
+        UINavigationBar.appearance().tintColor = .green
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-    }
-}
-
-struct Restaurant: Identifiable {
-    var id = UUID()
-    var name: String
-    var image: String
-}
-
-struct BasicImageRow: View {
-    var restaurant: Restaurant
-    
-    var body: some View {
-        HStack {
-            Image(restaurant.image)
-                .resizable()
-                .frame(width: 40, height: 40)
-                .cornerRadius(5)
-            Text(restaurant.name)
-        }
     }
 }
 
