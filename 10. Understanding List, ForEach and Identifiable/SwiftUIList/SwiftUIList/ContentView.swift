@@ -8,18 +8,37 @@
 import SwiftUI
 
 struct ContentView: View {
-    var landmarkNames = ["Charley Rivers", "Chilkoot Trail", "Chincoteague", "Hidden Lake", "Icy Bay", "Lake Mcdonald", "Rainbow Lake", "Silver Salmon Creek", "St. Mary Lake", "Twin Lake", "Umbagog"]
-    
-    var landmarkImages = ["charleyrivers", "chilkoottrail", "chincoteague", "hiddenlake", "icybay", "lakemcdonald", "rainbowlake", "silversalmoncreek", "stmarylake", "twinlake", "umbagog"]
+    var landmarks = [
+        Landmark(name: "Charley Rivers", image: "charleyrivers"),
+        Landmark(name: "Chilkoot Trail", image: "chilkoottrail"),
+        Landmark(name: "Chincoteague", image: "chincoteague"),
+        Landmark(name: "Hidden Lake", image: "hiddenlake"),
+        Landmark(name: "Icy Bay", image: "icybay"),
+        Landmark(name: "Lake Mcdonald", image: "lakemcdonald"),
+        Landmark(name: "Rainbow Lake", image: "rainbowlake"),
+        Landmark(name: "Silver Salmon Creek", image: "silversalmoncreek"),
+        Landmark(name: "St. Mary Lake", image: "stmarylake"),
+        Landmark(name: "Twin Lake", image: "twinlake"),
+        Landmark(name: "Umbagog", image: "umbagog"),
+        Landmark(name: "Charley Rivers 2", image: "charleyrivers"),
+        Landmark(name: "Chilkoot Trail 2", image: "chilkoottrail"),
+        Landmark(name: "Chincoteague 2", image: "chincoteague"),
+        Landmark(name: "Hidden Lake 2", image: "hiddenlake"),
+        Landmark(name: "Icy Bay 2", image: "icybay"),
+        Landmark(name: "Lake Mcdonald 2", image: "lakemcdonald"),
+        Landmark(name: "Rainbow Lake 2", image: "rainbowlake"),
+        Landmark(name: "Silver Salmon Creek 2", image: "silversalmoncreek"),
+        Landmark(name: "St. Mary Lake 2", image: "stmarylake"),
+        Landmark(name: "Twin Lake 2", image: "twinlake"),
+        Landmark(name: "Umbagog 2", image: "umbagog"),
+    ]
     
     var body: some View {
-        List(landmarkNames.indices, id: \.self) { index in
-            HStack {
-                Image(self.landmarkImages[index])
-                    .resizable()
-                    .frame(width: 40, height: 40)
-                    .cornerRadius(5)
-                Text(self.landmarkNames[index])
+        List(landmarks.indices) { index in
+            if (0...1).contains(index) {
+                FullImageRow(landmark: self.landmarks[index])
+            } else {
+                BasicImageRow(landmark: self.landmarks[index])
             }
         }
         

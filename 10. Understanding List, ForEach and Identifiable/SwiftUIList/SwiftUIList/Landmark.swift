@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Landmark {
+struct Landmark: Identifiable {
+    var id = UUID()
     var name: String
     var image: String
 }

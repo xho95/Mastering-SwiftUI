@@ -12,6 +12,8 @@
 		16FCAC572632C865002289DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16FCAC562632C865002289DA /* Assets.xcassets */; };
 		16FCAC5A2632C865002289DA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16FCAC592632C865002289DA /* Preview Assets.xcassets */; };
 		16FCAC632632D105002289DA /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FCAC622632D105002289DA /* Landmark.swift */; };
+		16FCAC692632D5D1002289DA /* BasicImageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FCAC682632D5D1002289DA /* BasicImageRow.swift */; };
+		16FCAC6E2632D67A002289DA /* FullImageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FCAC6D2632D67A002289DA /* FullImageRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		16FCAC592632C865002289DA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		16FCAC5B2632C865002289DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16FCAC622632D105002289DA /* Landmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
+		16FCAC682632D5D1002289DA /* BasicImageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicImageRow.swift; sourceTree = "<group>"; };
+		16FCAC6D2632D67A002289DA /* FullImageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullImageRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +60,12 @@
 			children = (
 				16FCAC522632C864002289DA /* SwiftUIListApp.swift */,
 				16FCAC542632C864002289DA /* ContentView.swift */,
+				16FCAC622632D105002289DA /* Landmark.swift */,
+				16FCAC682632D5D1002289DA /* BasicImageRow.swift */,
+				16FCAC6D2632D67A002289DA /* FullImageRow.swift */,
 				16FCAC562632C865002289DA /* Assets.xcassets */,
 				16FCAC5B2632C865002289DA /* Info.plist */,
 				16FCAC582632C865002289DA /* Preview Content */,
-				16FCAC622632D105002289DA /* Landmark.swift */,
 			);
 			path = SwiftUIList;
 			sourceTree = "<group>";
@@ -142,8 +148,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				16FCAC552632C864002289DA /* ContentView.swift in Sources */,
+				16FCAC6E2632D67A002289DA /* FullImageRow.swift in Sources */,
 				16FCAC532632C864002289DA /* SwiftUIListApp.swift in Sources */,
 				16FCAC632632D105002289DA /* Landmark.swift in Sources */,
+				16FCAC692632D5D1002289DA /* BasicImageRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
