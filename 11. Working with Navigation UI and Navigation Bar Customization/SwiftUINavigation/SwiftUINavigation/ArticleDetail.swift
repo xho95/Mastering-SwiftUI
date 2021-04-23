@@ -37,14 +37,9 @@ struct ArticleDetail: View {
 }
 
 struct ArticleDetail_Previews: PreviewProvider {
-    static var article = Article(title: "Test title",
-                                 author: "Test Author",
-                                 rating: 4,
-                                 excerpt: "Test excerpt",
-                                 image: "vision-framework",
-                                 content: "Test content, blar blar blar.")
-
     static var previews: some View {
-        ArticleDetail(article: article)
+        NavigationView {
+            ArticleDetail(article: articles[0])
+        }
     }
 }

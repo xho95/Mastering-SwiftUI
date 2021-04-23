@@ -11,7 +11,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List(articles) { article in
-                NavigationLink(destination: ArticleDetail(article: article)) {
+                NavigationLink(destination: SolutionDetail(article: article)) {
                     ArticleRow(article: article)
                 }
             }
