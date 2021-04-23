@@ -11,8 +11,13 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List(articles) { article in
-                NavigationLink(destination: SolutionDetail(article: article)) {
+                ZStack {
                     ArticleRow(article: article)
+                    
+                    NavigationLink(destination: SolutionDetail(article: article)) {
+                        EmptyView()     // It is not perfect by itself!
+                    }
+                    .opacity(0)         // Important!!
                 }
             }
             .navigationTitle("Your Reading")
