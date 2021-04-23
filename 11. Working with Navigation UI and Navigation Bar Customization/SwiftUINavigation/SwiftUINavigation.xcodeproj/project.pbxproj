@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16BBCF342633016C002D4B44 /* ArticleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BBCF332633016C002D4B44 /* ArticleRow.swift */; };
 		F4741D9324ECDAAD00F16863 /* SwiftUINavigationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4741D9224ECDAAD00F16863 /* SwiftUINavigationApp.swift */; };
 		F4741D9524ECDAAD00F16863 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4741D9424ECDAAD00F16863 /* ContentView.swift */; };
 		F4741D9724ECDAAE00F16863 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4741D9624ECDAAE00F16863 /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		16BBCF332633016C002D4B44 /* ArticleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRow.swift; sourceTree = "<group>"; };
 		F4741D8F24ECDAAD00F16863 /* SwiftUINavigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUINavigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4741D9224ECDAAD00F16863 /* SwiftUINavigationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUINavigationApp.swift; sourceTree = "<group>"; };
 		F4741D9424ECDAAD00F16863 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				F4741D9624ECDAAE00F16863 /* Assets.xcassets */,
 				F4741D9B24ECDAAE00F16863 /* Info.plist */,
 				F4741D9824ECDAAE00F16863 /* Preview Content */,
+				16BBCF332633016C002D4B44 /* ArticleRow.swift */,
 			);
 			path = SwiftUINavigation;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 				F4741D9524ECDAAD00F16863 /* ContentView.swift in Sources */,
 				F4741D9324ECDAAD00F16863 /* SwiftUINavigationApp.swift in Sources */,
 				F4741DA224ECDB2000F16863 /* Article.swift in Sources */,
+				16BBCF342633016C002D4B44 /* ArticleRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +277,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUINavigation/Preview Content\"";
+				DEVELOPMENT_TEAM = 6U792A794H;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SwiftUINavigation/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -294,6 +299,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUINavigation/Preview Content\"";
+				DEVELOPMENT_TEAM = 6U792A794H;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SwiftUINavigation/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
