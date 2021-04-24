@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1697C486263418F500A83F39 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1697C485263418F500A83F39 /* SettingView.swift */; };
-		F4741DD124ED67BE00F16863 /* SwiftUIFormApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4741DD024ED67BE00F16863 /* SwiftUIFormApp.swift */; };
+		F4741DD124ED67BE00F16863 /* SwiftUIDataSharingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4741DD024ED67BE00F16863 /* SwiftUIDataSharingApp.swift */; };
 		F4741DD324ED67BE00F16863 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4741DD224ED67BE00F16863 /* ContentView.swift */; };
 		F4741DD524ED67C100F16863 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4741DD424ED67C100F16863 /* Assets.xcassets */; };
 		F4741DD824ED67C100F16863 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4741DD724ED67C100F16863 /* Preview Assets.xcassets */; };
@@ -17,7 +17,7 @@
 /* Begin PBXFileReference section */
 		1697C485263418F500A83F39 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		F4741DCD24ED67BE00F16863 /* SwiftUIDataSharing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIDataSharing.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F4741DD024ED67BE00F16863 /* SwiftUIFormApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIFormApp.swift; sourceTree = "<group>"; };
+		F4741DD024ED67BE00F16863 /* SwiftUIDataSharingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIDataSharingApp.swift; sourceTree = "<group>"; };
 		F4741DD224ED67BE00F16863 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F4741DD424ED67C100F16863 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4741DD724ED67C100F16863 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -54,7 +54,7 @@
 		F4741DCF24ED67BE00F16863 /* SwiftUIDataSharing */ = {
 			isa = PBXGroup;
 			children = (
-				F4741DD024ED67BE00F16863 /* SwiftUIFormApp.swift */,
+				F4741DD024ED67BE00F16863 /* SwiftUIDataSharingApp.swift */,
 				F4741DD224ED67BE00F16863 /* ContentView.swift */,
 				1697C485263418F500A83F39 /* SettingView.swift */,
 				F4741DD424ED67C100F16863 /* Assets.xcassets */,
@@ -143,7 +143,7 @@
 			files = (
 				1697C486263418F500A83F39 /* SettingView.swift in Sources */,
 				F4741DD324ED67BE00F16863 /* ContentView.swift in Sources */,
-				F4741DD124ED67BE00F16863 /* SwiftUIFormApp.swift in Sources */,
+				F4741DD124ED67BE00F16863 /* SwiftUIDataSharingApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,16 +272,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIForm/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIDataSharing/Preview Content\"";
 				DEVELOPMENT_TEAM = 6U792A794H;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = SwiftUIForm/Info.plist;
+				INFOPLIST_FILE = SwiftUIDataSharing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.appcoda.SwiftUIForm;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xho95.SwiftUIDataSharing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -294,16 +294,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIForm/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIDataSharing/Preview Content\"";
 				DEVELOPMENT_TEAM = 6U792A794H;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = SwiftUIForm/Info.plist;
+				INFOPLIST_FILE = SwiftUIDataSharing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.appcoda.SwiftUIForm;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xho95.SwiftUIDataSharing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

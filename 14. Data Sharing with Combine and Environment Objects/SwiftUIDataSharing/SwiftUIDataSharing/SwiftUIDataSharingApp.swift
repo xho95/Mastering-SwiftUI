@@ -1,5 +1,5 @@
 //
-//  SwiftUIFormApp.swift
+//  SwiftUIDataSharingApp.swift
 //  SwiftUIForm
 //
 //  Created by Simon Ng on 19/8/2020.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct SwiftUIFormApp: App {
+struct SwiftUIDataSharingApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
