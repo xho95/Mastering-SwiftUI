@@ -5,15 +5,34 @@
 //  Created by Simon Ng on 19/8/2020.
 //
 
+// According to the [SwiftUI: Sheet cannot show correct values in first time](https://stackoverflow.com/questions/64798211/swiftui-sheet-cannot-show-correct-values-in-first-time), `.sheet(item:)` is better than `.sheet(isPresented:content:)`.
+
 import SwiftUI
 
 struct ContentView: View {
+    //@State private var showDetailView = false
+    //@State private var selectedArticle: Article?
+    @State private var selected: Article?
+
     var body: some View {
         NavigationView {
             List(articles) { article in
                 ArticleRow(article: article)
+                    .onTapGesture {
+                        selected = article
+                        //showDetailView = true
+                    }
             }
-
+            .sheet(item: $selected) { item in                   // better one
+                ArticleDetailView(article: item)
+            }
+            /*
+            .sheet(isPresented: $showDetailView) {              // old sheet style
+                //print("\(selectedArticle.title)")
+                if let selectedArticle = selectedArticle {
+                    ArticleDetailView(article: selectedArticle)
+                }
+            }*/
             .navigationBarTitle("Your Reading")
         }
     }
@@ -22,44 +41,5 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-    }
-}
-
-struct ArticleRow: View {
-    var article: Article
-    
-    var body: some View {
-        VStack(alignment: .leading) {
-            Image(article.image)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .cornerRadius(5)
-            
-            Text(article.title)
-                .font(.system(.title, design: .rounded))
-                .fontWeight(.black)
-                .lineLimit(3)
-                .padding(.bottom, 0)
-            
-            Text("By \(article.author)".uppercased())
-                .font(.subheadline)
-                .foregroundColor(.secondary)
-                .padding(.bottom, 0)
-                
-            HStack(spacing: 3) {
-                ForEach(1...(article.rating), id: \.self) { _ in
-                    Image(systemName: "star.fill")
-                        .font(.caption)
-                        .foregroundColor(.yellow)
-                }
-                
-                
-            }
-            
-            Text(article.excerpt)
-                .font(.subheadline)
-                .foregroundColor(.secondary)
-            
-        }
     }
 }
