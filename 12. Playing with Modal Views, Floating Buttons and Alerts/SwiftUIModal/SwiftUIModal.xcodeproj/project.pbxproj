@@ -58,11 +58,11 @@
 			children = (
 				F4741DB124ED0F2400F16863 /* SwiftUIModalApp.swift */,
 				F4741DB324ED0F2400F16863 /* ContentView.swift */,
+				F4741DC024ED0F6000F16863 /* Article.swift */,
+				F4741DC224ED0F7A00F16863 /* ArticleDetailView.swift */,
 				F4741DB524ED0F2700F16863 /* Assets.xcassets */,
 				F4741DBA24ED0F2700F16863 /* Info.plist */,
 				F4741DB724ED0F2700F16863 /* Preview Content */,
-				F4741DC024ED0F6000F16863 /* Article.swift */,
-				F4741DC224ED0F7A00F16863 /* ArticleDetailView.swift */,
 			);
 			path = SwiftUIModal;
 			sourceTree = "<group>";

@@ -37,11 +37,8 @@ struct ArticleDetailView: View {
                     .lineLimit(1000)
                     .multilineTextAlignment(.leading)
             }
-            
         }
-        
         .edgesIgnoringSafeArea(.top)
-        
     }
 }
 
