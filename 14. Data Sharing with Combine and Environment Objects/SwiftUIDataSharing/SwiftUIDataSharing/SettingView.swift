@@ -13,6 +13,8 @@ struct SettingView: View {
     @State private var selectedOrder = DisplayOrderType.alphabetical
     @State private var showCheckInOnly = false
     @State private var maxPriceLevel = 5
+    
+    var settingStore: SettingStore
 
     var body: some View {
         NavigationView {
@@ -55,17 +57,26 @@ struct SettingView: View {
                     Text("Cancel")
                 },
                 trailing: Button {
+                    self.settingStore.showCheckInOnly = self.showCheckInOnly
+                    self.settingStore.displayOrder = self.selectedOrder
+                    self.settingStore.maxPriceLevel = self.maxPriceLevel
+
                     self.presentationMode.wrappedValue.dismiss()
                 } label: {
                     Text("Save")
                 }
             )
         }
+        .onAppear() {
+            self.selectedOrder = self.settingStore.displayOrder
+            self.showCheckInOnly = self.settingStore.showCheckInOnly
+            self.maxPriceLevel = self.settingStore.maxPriceLevel
+        }
     }
 }
 
 struct SettingView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingView()
+        SettingView(settingStore: SettingStore())
     }
 }

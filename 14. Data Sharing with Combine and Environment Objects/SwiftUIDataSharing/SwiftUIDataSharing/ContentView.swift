@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-    
     @State var restaurants = [
         Restaurant(name: "Cafe Deadend", type: "Coffee & Tea Shop", phone: "232-923423", image: "cafedeadend", priceLevel: 3),
         Restaurant(name: "Homei", type: "Cafe", phone: "348-233423", image: "homei", priceLevel: 3),
@@ -35,6 +34,8 @@ struct ContentView: View {
 
     @State private var selectedRestaurant: Restaurant?
     @State private var showSettings: Bool = false
+    
+    var settingStore: SettingStore
     
     var body: some View {
         NavigationView {
@@ -93,7 +94,7 @@ struct ContentView: View {
                 }
             )
             .sheet(isPresented: $showSettings) {
-                SettingView()
+                SettingView(settingStore: self.settingStore)
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
@@ -120,73 +121,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(settingStore: SettingStore())
     }
 }
-
-struct Restaurant: Identifiable {
-    var id = UUID()
-    var name: String
-    var type: String
-    var phone: String
-    var image: String
-    var priceLevel: Int
-    var isFavorite: Bool = false
-    var isCheckIn: Bool = false
-}
-
-struct BasicImageRow: View {
-    var restaurant: Restaurant
-    
-    var body: some View {
-      
-            HStack {
-                Image(restaurant.image)
-                    .resizable()
-                    .frame(width: 60, height: 60)
-                    .clipShape(Circle())
-                    .padding(.trailing, 10)
-                
-                VStack(alignment: .leading) {
-                    HStack {
-                        Text(restaurant.name)
-                            .font(.system(.body, design: .rounded))
-                            .bold()
-                        
-                        Text(String(repeating: "$", count: restaurant.priceLevel))
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
-
-                    }
-                    
-                    Text(restaurant.type)
-                        .font(.system(.subheadline, design: .rounded))
-                        .bold()
-                        .foregroundColor(.secondary)
-                        .lineLimit(3)
-                    
-                    Text(restaurant.phone)
-                        .font(.system(.subheadline, design: .rounded))
-                        .foregroundColor(.secondary)
-                }
-                
-                Spacer()
-                    .layoutPriority(-100)
-                
-                if restaurant.isCheckIn {
-                    Image(systemName: "checkmark.seal.fill")
-                        .foregroundColor(.red)
-                }
-                
-                if restaurant.isFavorite {
-//                    Spacer()
-                    
-                    Image(systemName: "star.fill")
-                    .foregroundColor(.yellow)
-                }
-            }
-            
-        
-    }
-}
-
