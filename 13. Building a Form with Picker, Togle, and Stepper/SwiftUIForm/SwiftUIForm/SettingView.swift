@@ -47,31 +47,19 @@ struct SettingView: View {
                     }
                 }
             }
-            .overlay(
-                VStack {
-                    HStack {
-                        Button {
-                            self.presentationMode.wrappedValue.dismiss()
-                        } label: {
-                            Text("Cancel")
-                        }
-                        .padding()
-                        
-                        Spacer()
-                        
-                        Button {
-                            self.presentationMode.wrappedValue.dismiss()
-                        } label: {
-                            Text("Save")
-                        }
-                        .padding()
-                    }
-                    
-                    Spacer()
-                }
-                //.edgesIgnoringSafeArea(.top)
-            )
             .navigationTitle("Settings")
+            .navigationBarItems(
+                leading: Button {
+                    self.presentationMode.wrappedValue.dismiss()
+                } label: {
+                    Text("Cancel")
+                },
+                trailing: Button {
+                    self.presentationMode.wrappedValue.dismiss()
+                } label: {
+                    Text("Save")
+                }
+            )
         }
     }
     
