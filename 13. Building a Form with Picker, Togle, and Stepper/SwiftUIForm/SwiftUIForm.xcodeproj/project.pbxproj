@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1697C486263418F500A83F39 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1697C485263418F500A83F39 /* SettingView.swift */; };
 		F4741DD124ED67BE00F16863 /* SwiftUIFormApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4741DD024ED67BE00F16863 /* SwiftUIFormApp.swift */; };
 		F4741DD324ED67BE00F16863 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4741DD224ED67BE00F16863 /* ContentView.swift */; };
 		F4741DD524ED67C100F16863 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4741DD424ED67C100F16863 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1697C485263418F500A83F39 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		F4741DCD24ED67BE00F16863 /* SwiftUIForm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIForm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4741DD024ED67BE00F16863 /* SwiftUIFormApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIFormApp.swift; sourceTree = "<group>"; };
 		F4741DD224ED67BE00F16863 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 			children = (
 				F4741DD024ED67BE00F16863 /* SwiftUIFormApp.swift */,
 				F4741DD224ED67BE00F16863 /* ContentView.swift */,
+				1697C485263418F500A83F39 /* SettingView.swift */,
 				F4741DD424ED67C100F16863 /* Assets.xcassets */,
 				F4741DD924ED67C100F16863 /* Info.plist */,
 				F4741DD624ED67C100F16863 /* Preview Content */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1697C486263418F500A83F39 /* SettingView.swift in Sources */,
 				F4741DD324ED67BE00F16863 /* ContentView.swift in Sources */,
 				F4741DD124ED67BE00F16863 /* SwiftUIFormApp.swift in Sources */,
 			);

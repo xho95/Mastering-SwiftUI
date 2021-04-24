@@ -31,8 +31,7 @@ struct ContentView: View {
         Restaurant(name: "Donostia", type: "Spanish", phone: "722-232323", image: "donostia", priceLevel: 1),
         Restaurant(name: "Royal Oak", type: "British", phone: "343-988834", image: "royaloak", priceLevel: 2, isFavorite: true),
         Restaurant(name: "CASK Pub and Kitchen", type: "Thai", phone: "432-344050", image: "caskpubkitchen", priceLevel: 1)
-        ]
-    
+    ]
 
     @State private var selectedRestaurant: Restaurant?
     @State private var showSettings: Bool = false
@@ -83,12 +82,21 @@ struct ContentView: View {
                     self.restaurants.remove(atOffsets: indexSet)
                 }
             }
-            
-            .navigationBarTitle("Restaurant")
-            
+            .navigationTitle("Restaurant")
+            .navigationBarItems(
+                trailing: Button {
+                    self.showSettings = true
+                } label: {
+                    Image(systemName: "gear")
+                        .font(.title)
+                        .foregroundColor(.black)
+                }
+            )
+            .sheet(isPresented: $showSettings) {
+                SettingView()
+            }
         }
-        
-       
+        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     private func delete(item restaurant: Restaurant) {
