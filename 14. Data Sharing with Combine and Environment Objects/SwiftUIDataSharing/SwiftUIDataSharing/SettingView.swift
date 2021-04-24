@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct SettingView: View {
+    @EnvironmentObject var settingStore: SettingStore
+
     @Environment(\.presentationMode) var presentationMode
     
     @State private var selectedOrder = DisplayOrderType.alphabetical
     @State private var showCheckInOnly = false
     @State private var maxPriceLevel = 5
-    
-    var settingStore: SettingStore
 
     var body: some View {
         NavigationView {
@@ -77,6 +77,6 @@ struct SettingView: View {
 
 struct SettingView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingView(settingStore: SettingStore())
+        SettingView().environmentObject(SettingStore())
     }
 }

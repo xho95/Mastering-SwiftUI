@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var settingStore: SettingStore
+    
     @State var restaurants = [
         Restaurant(name: "Cafe Deadend", type: "Coffee & Tea Shop", phone: "232-923423", image: "cafedeadend", priceLevel: 3),
         Restaurant(name: "Homei", type: "Cafe", phone: "348-233423", image: "homei", priceLevel: 3),
@@ -34,8 +36,6 @@ struct ContentView: View {
 
     @State private var selectedRestaurant: Restaurant?
     @State private var showSettings: Bool = false
-    
-    var settingStore: SettingStore
     
     var body: some View {
         NavigationView {
@@ -90,11 +90,11 @@ struct ContentView: View {
                 } label: {
                     Image(systemName: "gear")
                         .font(.title)
-                        .foregroundColor(.black)
+                        .foregroundColor(.primary)
                 }
             )
             .sheet(isPresented: $showSettings) {
-                SettingView(settingStore: self.settingStore)
+                SettingView().environmentObject(self.settingStore)
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
@@ -121,6 +121,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(settingStore: SettingStore())
+        ContentView().environmentObject(SettingStore())
     }
 }
