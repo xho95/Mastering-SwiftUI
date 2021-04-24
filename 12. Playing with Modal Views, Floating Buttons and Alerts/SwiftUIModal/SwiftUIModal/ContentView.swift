@@ -10,8 +10,6 @@
 import SwiftUI
 
 struct ContentView: View {
-    //@State private var showDetailView = false
-    //@State private var selectedArticle: Article?
     @State private var selected: Article?
 
     var body: some View {
@@ -20,21 +18,19 @@ struct ContentView: View {
                 ArticleRow(article: article)
                     .onTapGesture {
                         selected = article
-                        //showDetailView = true
                     }
             }
-            .sheet(item: $selected) { item in                   // better one
-                ArticleDetailView(article: item)
+            .fullScreenCover(item: $selected) { article in
+                ArticleDetailView(article: article)
             }
             /*
-            .sheet(isPresented: $showDetailView) {              // old sheet style
-                //print("\(selectedArticle.title)")
-                if let selectedArticle = selectedArticle {
-                    ArticleDetailView(article: selectedArticle)
-                }
-            }*/
+            .sheet(item: $selected) { article in                   // better one
+                ArticleDetailView(article: article)
+            }
+             */
             .navigationBarTitle("Your Reading")
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
