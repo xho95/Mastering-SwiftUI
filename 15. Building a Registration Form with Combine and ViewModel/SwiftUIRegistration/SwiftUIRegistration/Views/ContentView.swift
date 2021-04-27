@@ -25,6 +25,7 @@ struct ContentView: View {
             
             FormField(name: "Password", text: $password, isSecure: true)
             VStack {
+                RequirementText(iconName: "lock.open", iconColor: .secondary, text: "A minimum of 8 characters", isStrikeThrough: true)
                 RequirementText(iconName: "lock.open", text: "A minimum of 8 characters", isStrikeThrough: false)
                 RequirementText(iconName: "lock.open", text: "One uppercase letter", isStrikeThrough: false)
             }
