@@ -33,7 +33,7 @@ struct ContentView: View {
     ]
     
     @State private var selectedRestaurant: Restaurant?
-    @State private var showActionSheet = false
+    //@State private var showActionSheet = false
     
     var body: some View {
         List {
@@ -63,9 +63,26 @@ struct ContentView: View {
                         }
                     }
                     .onTapGesture {
-                        self.showActionSheet.toggle()
+                        //self.showActionSheet.toggle()
                         self.selectedRestaurant = restaurant
                     }
+                    .actionSheet(item: self.$selectedRestaurant) { restaurant in
+                        ActionSheet(
+                            title: Text("What do you want to do"),
+                            message: nil,
+                            buttons: [
+                                .default(Text("Mark as Favorite")) {
+                                    self.setFavorite(item: restaurant)
+                                },
+                                .destructive(Text("Delete")) {
+                                    self.delete(item: restaurant)
+                                },
+                                .cancel()
+                            ]
+                        )
+                    }
+
+                    /*
                     .actionSheet(isPresented: self.$showActionSheet) {
                         ActionSheet(
                             title: Text("What do you want to do"),
@@ -85,6 +102,7 @@ struct ContentView: View {
                             ]
                         )
                     }
+                    */
             }
             .onDelete { indexSet in
                 self.restaurants.remove(atOffsets: indexSet)
