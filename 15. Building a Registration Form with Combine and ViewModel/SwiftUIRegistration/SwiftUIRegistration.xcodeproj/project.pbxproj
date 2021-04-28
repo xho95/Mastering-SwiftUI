@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		163B513A2637F3BC0072A9A2 /* FormValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163B51392637F3BC0072A9A2 /* FormValidator.swift */; };
+		163B513D2637F65E0072A9A2 /* UserRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163B513C2637F65E0072A9A2 /* UserRegistration.swift */; };
 		16B323BE2637CBF700388E38 /* SwiftUIRegistrationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B323BD2637CBF700388E38 /* SwiftUIRegistrationApp.swift */; };
 		16B323C02637CBF700388E38 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B323BF2637CBF700388E38 /* ContentView.swift */; };
 		16B323C22637CBFA00388E38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16B323C12637CBFA00388E38 /* Assets.xcassets */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		163B51392637F3BC0072A9A2 /* FormValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidator.swift; sourceTree = "<group>"; };
+		163B513C2637F65E0072A9A2 /* UserRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistration.swift; sourceTree = "<group>"; };
 		16B323BA2637CBF700388E38 /* SwiftUIRegistration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIRegistration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16B323BD2637CBF700388E38 /* SwiftUIRegistrationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIRegistrationApp.swift; sourceTree = "<group>"; };
 		16B323BF2637CBF700388E38 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -47,6 +51,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		163B51382637F3A80072A9A2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				163B51392637F3BC0072A9A2 /* FormValidator.swift */,
+				163B513C2637F65E0072A9A2 /* UserRegistration.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		16B323B12637CBF700388E38 = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				16B323BD2637CBF700388E38 /* SwiftUIRegistrationApp.swift */,
+				163B51382637F3A80072A9A2 /* Models */,
 				163A1CD72637E28800BCA921 /* Views */,
 				16B323C12637CBFA00388E38 /* Assets.xcassets */,
 				16B323C62637CBFA00388E38 /* Info.plist */,
@@ -152,8 +166,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				163B513A2637F3BC0072A9A2 /* FormValidator.swift in Sources */,
 				16B323C02637CBF700388E38 /* ContentView.swift in Sources */,
 				16B323CF2637DCEB00388E38 /* FormFiled.swift in Sources */,
+				163B513D2637F65E0072A9A2 /* UserRegistration.swift in Sources */,
 				16B323D22637DD3E00388E38 /* RequirementText.swift in Sources */,
 				16B323BE2637CBF700388E38 /* SwiftUIRegistrationApp.swift in Sources */,
 			);

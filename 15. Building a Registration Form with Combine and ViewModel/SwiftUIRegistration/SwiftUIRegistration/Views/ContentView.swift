@@ -25,7 +25,6 @@ struct ContentView: View {
             
             FormField(name: "Password", text: $password, isSecure: true)
             VStack {
-                RequirementText(iconName: "lock.open", iconColor: .secondary, text: "A minimum of 8 characters", isStrikeThrough: true)
                 RequirementText(iconName: "lock.open", text: "A minimum of 8 characters", isStrikeThrough: false)
                 RequirementText(iconName: "lock.open", text: "One uppercase letter", isStrikeThrough: false)
             }
@@ -45,7 +44,14 @@ struct ContentView: View {
                     .bold()
                     .padding()
                     .frame(minWidth: 0, maxWidth: .infinity)
-                    .background(LinearGradient(gradient: Gradient(colors: [Color(red: 251/255, green: 128/255, blue: 128/255), Color(red: 253/255, green: 193/255, blue: 104/255)]), startPoint: .leading, endPoint: .trailing))
+                    .background(
+                        LinearGradient(
+                            gradient: Gradient(colors: [
+                                                Color(red: 251/255, green: 128/255, blue: 128/255),
+                                                Color(red: 253/255, green: 193/255, blue: 104/255)]),
+                            startPoint: .leading,
+                            endPoint: .trailing)
+                    )
                     .cornerRadius(10)
                     .padding(.horizontal)
             }
