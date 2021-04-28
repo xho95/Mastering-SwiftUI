@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  DraggableView.swift
 //  SwiftUIGesture
 //
 //  Created by Kim, Min Ho on 2021/04/28.
@@ -7,29 +7,22 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct DraggableView<Content>: View where Content: View {
     @GestureState private var dragState = DragState.inactive
-
     @State private var position = CGSize.zero
     
+    var content: () -> Content
+    
     var body: some View {
-        DraggableView {
-            Image(systemName: "swift")
-                .font(.system(size: 100, weight: .bold, design: .rounded))
-                //.bold()
-                .foregroundColor(.red)
-        }
-        /*
-        Image(systemName: "star.circle.fill")
-            .font(.system(size: 100))
+        content()
             .opacity(dragState.isPressing ? 0.5 : 1.0)
-            .offset(x: position.width + dragState.translation.width, y: position.height + dragState.translation.height)
+            .offset(x: position.width + dragState.translation.width,
+                    y: position.height + dragState.translation.height)
             .animation(.easeInOut)
-            .foregroundColor(.green)
             .gesture(
                 LongPressGesture(minimumDuration: 1.0)
                     .sequenced(before: DragGesture())
-                    .updating($dragState) { value, state, transaction in
+                    .updating($dragState) { value, state, translation in
                         switch value {
                         case .first(true):
                             state = .pressing
@@ -42,16 +35,19 @@ struct ContentView: View {
                     .onEnded { value in
                         guard case .second(true, let drag?) = value else { return }
                         
-                        self.position.height += drag.translation.height
                         self.position.width += drag.translation.width
+                        self.position.height += drag.translation.height
                     }
             )
-         */
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct DraggableView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        DraggableView() {
+            Image(systemName: "star.circle.fill")
+                .font(.system(size: 100))
+                .foregroundColor(.green)
+        }
     }
 }
