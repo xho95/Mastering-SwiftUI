@@ -8,32 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
-    //@State private var isPressed = false
+    @GestureState private var dragState = DragState.inactive
+
     @State private var position = CGSize.zero
-    
-    @GestureState private var isPressed = false
-    @GestureState private var dragOffset = CGSize.zero
     
     var body: some View {
         Image(systemName: "star.circle.fill")
             .font(.system(size: 100))
-            .opacity(isPressed ? 0.5 : 1.0)
-            .offset(x: position.width + dragOffset.width, y: position.height + dragOffset.height)
-            //.scaleEffect(isPressed ? 0.5 : 1.0)
+            .opacity(dragState.isPressing ? 0.5 : 1.0)
+            .offset(x: position.width + dragState.translation.width, y: position.height + dragState.translation.height)
             .animation(.easeInOut)
             .foregroundColor(.green)
             .gesture(
                 LongPressGesture(minimumDuration: 1.0)
-                    .updating($isPressed) { currentState, state, transaction in  // value, state, transaction
-                        state = currentState
-                    }
                     .sequenced(before: DragGesture())
-                    .updating($dragOffset) { value, state, transaction in
+                    .updating($dragState) { value, state, transaction in
                         switch value {
                         case .first(true):
-                            print("Tapping")
+                            state = .pressing
                         case .second(true, let drag):
-                            state = drag?.translation ?? .zero
+                            state = .dragging(translation: drag?.translation ?? .zero)
                         default:
                             break
                         }

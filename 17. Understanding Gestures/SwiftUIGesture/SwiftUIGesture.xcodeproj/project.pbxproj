@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		161A79DB26397364006B0025 /* DragState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161A79DA26397364006B0025 /* DragState.swift */; };
 		167FA2BC2639678F0080EB95 /* SwiftUIGestureApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167FA2BB2639678F0080EB95 /* SwiftUIGestureApp.swift */; };
 		167FA2BE2639678F0080EB95 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167FA2BD2639678F0080EB95 /* ContentView.swift */; };
 		167FA2C0263967900080EB95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 167FA2BF263967900080EB95 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		161A79DA26397364006B0025 /* DragState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragState.swift; sourceTree = "<group>"; };
 		167FA2B82639678F0080EB95 /* SwiftUIGesture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIGesture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		167FA2BB2639678F0080EB95 /* SwiftUIGestureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIGestureApp.swift; sourceTree = "<group>"; };
 		167FA2BD2639678F0080EB95 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 			children = (
 				167FA2BB2639678F0080EB95 /* SwiftUIGestureApp.swift */,
 				167FA2BD2639678F0080EB95 /* ContentView.swift */,
+				161A79DA26397364006B0025 /* DragState.swift */,
 				167FA2BF263967900080EB95 /* Assets.xcassets */,
 				167FA2C4263967900080EB95 /* Info.plist */,
 				167FA2C1263967900080EB95 /* Preview Content */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				167FA2BE2639678F0080EB95 /* ContentView.swift in Sources */,
+				161A79DB26397364006B0025 /* DragState.swift in Sources */,
 				167FA2BC2639678F0080EB95 /* SwiftUIGestureApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
