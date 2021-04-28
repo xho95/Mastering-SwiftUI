@@ -42,6 +42,17 @@ struct ContentView: View {
                     .contextMenu {
                         Button {
                             withAnimation {
+                                self.setCheckIn(item: restaurant)
+                            }
+                        } label: {
+                            HStack {
+                                Text("Check-in")
+                                Image(systemName: "checkmark.seal.fill")
+                            }
+                        }
+
+                        Button {
+                            withAnimation {
                                 self.delete(item: restaurant)
                             }
                         } label: {
@@ -71,6 +82,9 @@ struct ContentView: View {
                             title: Text("What do you want to do"),
                             message: nil,
                             buttons: [
+                                .default(Text("Mark as Check-in")) {
+                                    self.setCheckIn(item: restaurant)
+                                },
                                 .default(Text("Mark as Favorite")) {
                                     self.setFavorite(item: restaurant)
                                 },
@@ -119,6 +133,12 @@ struct ContentView: View {
     private func setFavorite(item restaurant: Restaurant) {
         if let index = self.restaurants.firstIndex(where: { $0.id == restaurant.id }) {
             self.restaurants[index].isFavorite.toggle()
+        }
+    }
+    
+    private func setCheckIn(item restaurant: Restaurant) {
+        if let index = self.restaurants.firstIndex(where: { $0.id == restaurant.id }) {
+            self.restaurants[index].isCheckIn.toggle()
         }
     }
 }
