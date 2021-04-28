@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var username = ""
-    @State private var password = ""
-    @State private var passwordConfirm = ""
+//    @State private var username = ""
+//    @State private var password = ""
+//    @State private var passwordConfirm = ""
+//
+    @ObservedObject private var userRegistration = UserRegistration()
     
     var body: some View {
         VStack {
@@ -19,19 +21,37 @@ struct ContentView: View {
                 .bold()
                 .padding(.bottom, 30)
             
-            FormField(name: "Username", text: $username)
-            RequirementText(text: "A minimum of 4 characters")
+            FormField(name: "Username", text: $userRegistration.username)
+            RequirementText(iconColor: userRegistration.isUsernameLengthValid ?
+                                Color.secondary :
+                                Color(red: 251/255, green: 128/255, blue: 128.255),
+                            text: "A minimum of 4 characters",
+                            isStrikeThrough: userRegistration.isUsernameLengthValid)
                 .padding()
             
-            FormField(name: "Password", text: $password, isSecure: true)
+            FormField(name: "Password", text: $userRegistration.password, isSecure: true)
             VStack {
-                RequirementText(iconName: "lock.open", text: "A minimum of 8 characters", isStrikeThrough: false)
-                RequirementText(iconName: "lock.open", text: "One uppercase letter", isStrikeThrough: false)
+                RequirementText(iconName: "lock.open",
+                                iconColor: userRegistration.isPasswordLengthValid ?
+                                    Color.secondary :
+                                    Color(red: 251/255, green: 128/255, blue: 128.255),
+                                text: "A minimum of 8 characters",
+                                isStrikeThrough: userRegistration.isPasswordLengthValid)
+                RequirementText(iconName: "lock.open",
+                                iconColor: userRegistration.isPasswordCapitalLetter ?
+                                    Color.secondary :
+                                    Color(red: 251/255, green: 128/255, blue: 128.255),
+                                text: "One uppercase letter",
+                                isStrikeThrough: userRegistration.isPasswordCapitalLetter)
             }
             .padding()
             
-            FormField(name: "Confirm Password", text: $passwordConfirm, isSecure: true)
-            RequirementText(text: "Your confirm password should be the same as password", isStrikeThrough: false)
+            FormField(name: "Confirm Password", text: $userRegistration.passwordConfirm, isSecure: true)
+            RequirementText(iconColor: userRegistration.isPasswordConfirmValid ?
+                                Color.secondary :
+                                Color(red: 251/255, green: 128/255, blue: 128.255),
+                            text: "Your confirm password should be the same as password",
+                            isStrikeThrough: userRegistration.isPasswordConfirmValid)
                 .padding()
                 .padding(.bottom, 50)
             
