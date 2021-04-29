@@ -7,12 +7,19 @@
 
 import SwiftUI
 
+enum ViewState {
+    case full, half
+}
+
 struct RestaurantDetailView: View {
+    var restaurant: Restaurant
+
     @GestureState private var dragState = DragState.inactive
 
+    @State private var viewState = ViewState.half
     @State private var offset: CGFloat = 0.0
     
-    var restaurant: Restaurant
+    @Binding var isShow: Bool
     
     var body: some View {
         GeometryReader { geometry in
@@ -22,6 +29,11 @@ struct RestaurantDetailView: View {
                 HandleBar()
                 
                 ScrollView(.vertical) {
+                    GeometryReader { scrollViewProxy in
+                        Text("\(scrollViewProxy.frame(in: .named("scrollview")).minY)")
+                    }
+                    .frame(height: 0)
+                    
                     TitleBar()
                     
                     HeaderView(restaurant: restaurant)
@@ -31,10 +43,12 @@ struct RestaurantDetailView: View {
                     DetailInfoView(icon: "phone", info: restaurant.phone)
                     DetailInfoView(icon: nil, info: restaurant.description)
                         .padding(.top)
+                        .padding(.bottom, 100)
                 }
                 .background(Color.white)
                 .cornerRadius(10, antialiased: true)
-                .disabled(true)
+                .disabled(self.viewState == .half)
+                .coordinateSpace(name: "scrollview")
             }
             .offset(y: geometry.size.height / 2 + self.dragState.translation.height + self.offset)
             .animation(.interpolatingSpring(stiffness: 200.0, damping: 25.0, initialVelocity: 10.0))
@@ -44,6 +58,22 @@ struct RestaurantDetailView: View {
                     .updating($dragState) { value, state, transaction in
                         state = .dragging(translation: value.translation)
                     }
+                    .onEnded { value in
+                        if self.viewState == .half {
+                            // Threshold #1: fully opened
+                            if value.translation.height < -geometry.size.height * 0.25 {
+                                print("hi")
+                                self.offset = -geometry.size.height / 2 + 50
+                                self.viewState = .full
+                            }
+                            
+                            // Threshold #2: dismiss
+                            if value.translation.height > geometry.size.height * 0.3 {
+                                print("low")
+                                self.isShow = false
+                            }
+                        }
+                    }
             )
         }
     }
@@ -51,7 +81,7 @@ struct RestaurantDetailView: View {
 
 struct BasicDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        RestaurantDetailView(restaurant: restaurants[0])
+        RestaurantDetailView(restaurant: restaurants[0], isShow: .constant(true))
             .background(Color.black.opacity(0.3))
             .ignoresSafeArea(.all)
     }

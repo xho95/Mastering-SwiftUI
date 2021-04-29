@@ -36,7 +36,7 @@ struct ContentView: View {
                     }
                 
                 if let selectedRestaurant = selectedRestaurant {
-                    RestaurantDetailView(restaurant: selectedRestaurant)
+                    RestaurantDetailView(restaurant: selectedRestaurant, isShow: $showDetail)
                         .transition(.move(edge: .bottom))
                 }
             }
