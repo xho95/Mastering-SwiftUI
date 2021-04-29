@@ -34,6 +34,7 @@ struct RestaurantDetailView: View {
                 }
                 .background(Color.white)
                 .cornerRadius(10, antialiased: true)
+                .disabled(true)
             }
             .offset(y: geometry.size.height / 2 + self.dragState.translation.height + self.offset)
             .animation(.interpolatingSpring(stiffness: 200.0, damping: 25.0, initialVelocity: 10.0))
