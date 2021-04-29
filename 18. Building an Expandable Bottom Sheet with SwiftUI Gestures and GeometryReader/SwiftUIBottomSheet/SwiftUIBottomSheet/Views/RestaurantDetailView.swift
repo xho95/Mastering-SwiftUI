@@ -8,34 +8,51 @@
 import SwiftUI
 
 struct RestaurantDetailView: View {
+    @GestureState private var dragState = DragState.inactive
+
+    @State private var offset: CGFloat = 0.0
+    
     var restaurant: Restaurant
     
     var body: some View {
-        VStack {
-            Spacer()
-            
-            HandleBar()
-            
-            ScrollView(.vertical) {
-                TitleBar()
+        GeometryReader { geometry in
+            VStack {
+                Spacer()
                 
-                HeaderView(restaurant: restaurant)
+                HandleBar()
                 
-                DetailInfoView(icon: "map", info: restaurant.location)
-                    .padding(.top)
-                DetailInfoView(icon: "phone", info: restaurant.phone)
-                DetailInfoView(icon: nil, info: restaurant.description)
-                    .padding(.top)
+                ScrollView(.vertical) {
+                    TitleBar()
+                    
+                    HeaderView(restaurant: restaurant)
+                    
+                    DetailInfoView(icon: "map", info: restaurant.location)
+                        .padding(.top)
+                    DetailInfoView(icon: "phone", info: restaurant.phone)
+                    DetailInfoView(icon: nil, info: restaurant.description)
+                        .padding(.top)
+                }
+                .background(Color.white)
+                .cornerRadius(10, antialiased: true)
             }
+            .offset(y: geometry.size.height / 2 + self.dragState.translation.height + self.offset)
+            .animation(.interpolatingSpring(stiffness: 200.0, damping: 25.0, initialVelocity: 10.0))
+            .ignoresSafeArea(.all)
+            .gesture(
+                DragGesture()
+                    .updating($dragState) { value, state, transaction in
+                        state = .dragging(translation: value.translation)
+                    }
+            )
         }
-        .background(Color.white)
-        .cornerRadius(10, antialiased: true)
     }
 }
 
 struct BasicDetailView_Previews: PreviewProvider {
     static var previews: some View {
         RestaurantDetailView(restaurant: restaurants[0])
+            .background(Color.black.opacity(0.3))
+            .ignoresSafeArea(.all)
     }
 }
 
