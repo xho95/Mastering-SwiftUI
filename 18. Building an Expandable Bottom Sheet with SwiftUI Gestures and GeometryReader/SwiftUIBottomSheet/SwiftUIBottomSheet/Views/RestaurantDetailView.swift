@@ -18,7 +18,8 @@ struct RestaurantDetailView: View {
 
     @State private var viewState = ViewState.half
     @State private var offset: CGFloat = 0.0
-    
+    @State private var scroll: CGFloat = 0.0
+
     @Binding var isShow: Bool
     
     var body: some View {
@@ -30,20 +31,26 @@ struct RestaurantDetailView: View {
                 
                 ScrollView(.vertical) {
                     GeometryReader { scrollViewProxy in
-                        Text("\(scrollViewProxy.frame(in: .named("scrollview")).minY)")
+                        Color.clear.preference(key: ScrollOffsetKey.self,
+                                               value: scrollViewProxy.frame(in: .named("scrollview")).minY)
+                        //Text("\(scrollViewProxy.frame(in: .named("scrollview")).minY)")
                     }
                     .frame(height: 0)
                     
-                    TitleBar()
-                    
-                    HeaderView(restaurant: restaurant)
-                    
-                    DetailInfoView(icon: "map", info: restaurant.location)
-                        .padding(.top)
-                    DetailInfoView(icon: "phone", info: restaurant.phone)
-                    DetailInfoView(icon: nil, info: restaurant.description)
-                        .padding(.top)
-                        .padding(.bottom, 100)
+                    VStack {
+                        TitleBar()
+                        
+                        HeaderView(restaurant: restaurant)
+                        
+                        DetailInfoView(icon: "map", info: restaurant.location)
+                            .padding(.top)
+                        DetailInfoView(icon: "phone", info: restaurant.phone)
+                        DetailInfoView(icon: nil, info: restaurant.description)
+                            .padding(.top)
+                            .padding(.bottom, 100)
+                    }
+                    .offset(y: -self.scroll)
+                    .animation(nil)
                 }
                 .background(Color.white)
                 .cornerRadius(10, antialiased: true)
@@ -51,6 +58,7 @@ struct RestaurantDetailView: View {
                 .coordinateSpace(name: "scrollview")
             }
             .offset(y: geometry.size.height / 2 + self.dragState.translation.height + self.offset)
+            .offset(y: self.scroll)
             .animation(.interpolatingSpring(stiffness: 200.0, damping: 25.0, initialVelocity: 10.0))
             .ignoresSafeArea(.all)
             .gesture(
@@ -75,6 +83,19 @@ struct RestaurantDetailView: View {
                         }
                     }
             )
+            .onPreferenceChange(ScrollOffsetKey.self) { value in
+                //print("\(value)")
+                if self.viewState == .full {
+                    self.scroll = value > 0 ? value : 0
+                    
+                    if self.scroll > 120 {
+                        self.offset = 0
+                        self.viewState = .half
+                        self.scroll = 0
+                    }
+                }
+            }
+            //.offset(y: self.scroll)
         }
     }
 }
@@ -84,6 +105,17 @@ struct BasicDetailView_Previews: PreviewProvider {
         RestaurantDetailView(restaurant: restaurants[0], isShow: .constant(true))
             .background(Color.black.opacity(0.3))
             .ignoresSafeArea(.all)
+    }
+}
+
+// PreferenceKey allows you to pass data from child views to its ancestors
+struct ScrollOffsetKey: PreferenceKey {
+    typealias Value = CGFloat
+    
+    static var defaultValue = CGFloat.zero
+    
+    static func reduce(value: inout Value, nextValue: () -> CGFloat) {
+        value += nextValue()
     }
 }
 
