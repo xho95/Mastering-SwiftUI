@@ -9,13 +9,28 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            TopBarMenu()
+            
+            CardView(image: trips[0].image, title: trips[0].destination)
+            
+            Spacer(minLength: 20)
+            
+            BottomBarMenu()
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Group {
+            ContentView()
+            
+            TopBarMenu()
+                .previewLayout(.sizeThatFits)
+                //.previewLayout(.fixed(width: 375, height: 60))
+            BottomBarMenu()
+                .previewLayout(.sizeThatFits)
+        }
     }
 }

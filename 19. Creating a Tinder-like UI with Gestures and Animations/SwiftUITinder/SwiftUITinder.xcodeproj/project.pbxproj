@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		163CF921263BD97400845971 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163CF920263BD97400845971 /* CardView.swift */; };
+		163CF923263BE0FF00845971 /* TopBarMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163CF922263BE0FF00845971 /* TopBarMenu.swift */; };
+		163CF925263BE21300845971 /* BottomBarMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163CF924263BE21300845971 /* BottomBarMenu.swift */; };
 		F45676DF24F3948900709C6D /* SwiftUITinderTripApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45676DE24F3948900709C6D /* SwiftUITinderTripApp.swift */; };
 		F45676E124F3948900709C6D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45676E024F3948900709C6D /* ContentView.swift */; };
 		F45676E324F3948B00709C6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F45676E224F3948B00709C6D /* Assets.xcassets */; };
@@ -15,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		163CF920263BD97400845971 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		163CF922263BE0FF00845971 /* TopBarMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarMenu.swift; sourceTree = "<group>"; };
+		163CF924263BE21300845971 /* BottomBarMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBarMenu.swift; sourceTree = "<group>"; };
 		F45676DB24F3948900709C6D /* SwiftUITinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUITinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F45676DE24F3948900709C6D /* SwiftUITinderTripApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUITinderTripApp.swift; sourceTree = "<group>"; };
 		F45676E024F3948900709C6D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -47,6 +53,9 @@
 			isa = PBXGroup;
 			children = (
 				F45676E024F3948900709C6D /* ContentView.swift */,
+				163CF920263BD97400845971 /* CardView.swift */,
+				163CF922263BE0FF00845971 /* TopBarMenu.swift */,
+				163CF924263BE21300845971 /* BottomBarMenu.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -159,6 +168,9 @@
 			files = (
 				F45676EE24F3950F00709C6D /* Trip.swift in Sources */,
 				F45676E124F3948900709C6D /* ContentView.swift in Sources */,
+				163CF921263BD97400845971 /* CardView.swift in Sources */,
+				163CF925263BE21300845971 /* BottomBarMenu.swift in Sources */,
+				163CF923263BE0FF00845971 /* TopBarMenu.swift in Sources */,
 				F45676DF24F3948900709C6D /* SwiftUITinderTripApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
