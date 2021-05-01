@@ -13,7 +13,8 @@ struct ContentView: View {
     private let dragThreshold: CGFloat = 80.0
     
     @State private var lastIndex = 1
-    
+    @State private var removalTransition = AnyTransition.trailingBottom
+
     // TODO: Move this code into the ViewModel corresponding with the Generic Model
     @State private var cardViews: [CardView] = {
         var views = [CardView]()
@@ -59,6 +60,7 @@ struct ContentView: View {
                                     Double( self.dragState.translation.width / 10) : 0)
                         )
                         .animation(.interpolatingSpring(stiffness: 180, damping: 100))
+                        .transition(self.removalTransition)
                         .gesture(
                             LongPressGesture(minimumDuration: 0.01)
                                 .sequenced(before: DragGesture())
@@ -70,6 +72,17 @@ struct ContentView: View {
                                         state = .dragging(translation: drag?.translation ?? .zero)
                                     default:
                                         break
+                                    }
+                                }
+                                .onChanged { value in
+                                    guard case .second(true, let drag?) = value else { return }
+                                    
+                                    if drag.translation.width < -self.dragThreshold {
+                                        self.removalTransition = .leadingBottom
+                                    }
+                                    
+                                    if drag.translation.width > self.dragThreshold {
+                                        self.removalTransition = .trailingBottom
                                     }
                                 }
                                 .onEnded { value in
