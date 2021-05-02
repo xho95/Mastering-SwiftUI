@@ -5,7 +5,7 @@ let json = """
     "name": "John Davis",
     "country": "Peru",
     "use": "to buy a new collection of clothes to stock her shop before the holidays.",
-    "amount": 150
+    "loan_amount": 150
 }
 """
 
@@ -14,6 +14,13 @@ struct Loan: Codable {
     var country: String
     var use: String
     var amount: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case name
+        case country
+        case use
+        case amount = "loan_amount"
+    }
 }
 
 let decoder = JSONDecoder()
