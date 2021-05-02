@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1669D8E1263E6EF400BE6A9D /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1669D8E0263E6EF400BE6A9D /* CardView.swift */; };
 		F456775724F76DD500709C6D /* SwiftUIWalletApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F456775624F76DD500709C6D /* SwiftUIWalletApp.swift */; };
-		F456775924F76DD500709C6D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F456775824F76DD500709C6D /* ContentView.swift */; };
+		F456775924F76DD500709C6D /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F456775824F76DD500709C6D /* WalletView.swift */; };
 		F456775B24F76DD700709C6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F456775A24F76DD700709C6D /* Assets.xcassets */; };
 		F456775E24F76DD700709C6D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F456775D24F76DD700709C6D /* Preview Assets.xcassets */; };
 		F456776824F76DFA00709C6D /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F456776724F76DFA00709C6D /* Transaction.swift */; };
@@ -17,9 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1669D8E0263E6EF400BE6A9D /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		F456775324F76DD500709C6D /* SwiftUIWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F456775624F76DD500709C6D /* SwiftUIWalletApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIWalletApp.swift; sourceTree = "<group>"; };
-		F456775824F76DD500709C6D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F456775824F76DD500709C6D /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
 		F456775A24F76DD700709C6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F456775D24F76DD700709C6D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F456775F24F76DD700709C6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -79,8 +81,9 @@
 		F456776524F76DE100709C6D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F456775824F76DD500709C6D /* ContentView.swift */,
+				F456775824F76DD500709C6D /* WalletView.swift */,
 				F456776C24F76E2400709C6D /* TransactionHistoryView.swift */,
+				1669D8E0263E6EF400BE6A9D /* CardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -163,10 +166,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F456775924F76DD500709C6D /* ContentView.swift in Sources */,
+				F456775924F76DD500709C6D /* WalletView.swift in Sources */,
 				F456775724F76DD500709C6D /* SwiftUIWalletApp.swift in Sources */,
 				F456776824F76DFA00709C6D /* Transaction.swift in Sources */,
 				F456776D24F76E2400709C6D /* TransactionHistoryView.swift in Sources */,
+				1669D8E1263E6EF400BE6A9D /* CardView.swift in Sources */,
 				F456776A24F76E0300709C6D /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
