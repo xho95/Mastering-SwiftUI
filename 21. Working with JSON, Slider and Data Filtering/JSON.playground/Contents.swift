@@ -2,14 +2,30 @@ import Foundation
 
 let json = """
 {
-    "name": "John Davis",
-    "location": {
-        "country": "Peru",
-    },
-    "use": "to buy a new collection of clothes to stock her shop before the holidays.",
-    "loan_amount": 150
+    "loans": [
+        {
+            "name": "John Davis",
+            "location": {
+                "country": "Peru",
+            },
+            "use": "to buy a new collection of clothes to stock her shop before the holidays.",
+            "loan_amount": 150
+        },
+        {
+            "name": "Las Margaritas Group",
+            "location": {
+                "country": "Colombia",
+            },
+            "use": "to purchase coal in large quantities for resale.",
+            "loan_amount": 200
+        }
+    ]
 }
 """
+
+struct LoanStore: Codable {
+    var loans: [Loan]
+}
 
 struct Loan: Codable {
     var name: String
@@ -45,8 +61,11 @@ let decoder = JSONDecoder()
 
 if let jsonData = json.data(using: .utf8) {
     do {
-        let loan = try decoder.decode(Loan.self, from: jsonData)
-        print(loan)
+        let loanStore = try decoder.decode(LoanStore.self, from: jsonData)
+        
+        for loan in loanStore.loans {
+            print(loan)
+        }
     } catch {
         print(error)
     }
