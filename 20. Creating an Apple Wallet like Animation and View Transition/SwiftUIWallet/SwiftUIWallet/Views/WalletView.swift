@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct WalletView: View {
-    @State var isPresented = false
-    @State var isCardPressed = false
-    @State var selectedCard: Card?
+    @GestureState private var dragState = DragState.inactive
+    
+    @State private var isPresented = false
+    @State private var isCardPressed = false
+    @State private var selectedCard: Card?
 
     private static let cardOffset: CGFloat = 50.0
     
@@ -37,11 +39,30 @@ struct WalletView: View {
                             .gesture(
                                 TapGesture()
                                     .onEnded { _ in
-                                        withAnimation {
+                                        withAnimation(.default) {
                                             self.isCardPressed.toggle()
                                             self.selectedCard = self.isCardPressed ? card : nil
                                         }
                                     }
+                                    .exclusively(
+                                        before: LongPressGesture(minimumDuration: 0.05)
+                                            .sequenced(before: DragGesture())
+                                            .updating($dragState) { value, state, transaction in
+                                                switch value {
+                                                case .first(true):
+                                                    state = .pressing(index: self.index(for: card))
+                                                case .second(true, let drag):
+                                                    state = .dragging(index: self.index(for: card), translation: drag?.translation ?? .zero)
+                                                default:
+                                                    break
+                                                }
+                                            }
+                                            .onEnded { value in
+                                                guard case .second(true, let drag?) = value else { return }
+                                                
+                                                //
+                                            }
+                                    )
                             )
                     }
                 }
@@ -82,9 +103,28 @@ struct WalletView: View {
             let offset = CGSize(width: 0, height: 1400)
             
             return offset
-        } else {
-            return CGSize(width: 0, height: -50 * CGFloat(cardIndex))
         }
+        
+        // Handling a dragging
+        var pressedOffset = CGSize.zero
+        var dragOffsetY: CGFloat = 0.0
+        
+        if let draggingIndex = dragState.index, cardIndex == draggingIndex {
+            pressedOffset.height = dragState.isPressing ? -20 : 0
+            
+            switch dragState.translation.width {
+            case let width where width < -10:
+                pressedOffset.width = -20
+            case let width where width > 10:
+                pressedOffset.width = 20
+            default:
+                break
+            }
+            
+            dragOffsetY = dragState.translation.height
+        }
+        
+        return CGSize(width: 0 + pressedOffset.width, height: -50 * CGFloat(cardIndex) + pressedOffset.height + dragOffsetY)
     }
     
     private func index(for card: Card) -> Int? {

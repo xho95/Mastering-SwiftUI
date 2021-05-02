@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1669D8E1263E6EF400BE6A9D /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1669D8E0263E6EF400BE6A9D /* CardView.swift */; };
+		1669D8E3263E872600BE6A9D /* DragState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1669D8E2263E872600BE6A9D /* DragState.swift */; };
 		F456775724F76DD500709C6D /* SwiftUIWalletApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F456775624F76DD500709C6D /* SwiftUIWalletApp.swift */; };
 		F456775924F76DD500709C6D /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F456775824F76DD500709C6D /* WalletView.swift */; };
 		F456775B24F76DD700709C6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F456775A24F76DD700709C6D /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		1669D8E0263E6EF400BE6A9D /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		1669D8E2263E872600BE6A9D /* DragState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragState.swift; sourceTree = "<group>"; };
 		F456775324F76DD500709C6D /* SwiftUIWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F456775624F76DD500709C6D /* SwiftUIWalletApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIWalletApp.swift; sourceTree = "<group>"; };
 		F456775824F76DD500709C6D /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			children = (
 				F456776724F76DFA00709C6D /* Transaction.swift */,
 				F456776924F76E0300709C6D /* Card.swift */,
+				1669D8E2263E872600BE6A9D /* DragState.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1669D8E3263E872600BE6A9D /* DragState.swift in Sources */,
 				F456775924F76DD500709C6D /* WalletView.swift in Sources */,
 				F456775724F76DD500709C6D /* SwiftUIWalletApp.swift in Sources */,
 				F456776824F76DFA00709C6D /* Transaction.swift in Sources */,
