@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct WalletView: View {
-    @GestureState private var dragState = DragState.inactive
-    
+    @State var cards: [Card] = testCards
+
     @State private var isPresented = false
     @State private var isCardPressed = false
     @State private var selectedCard: Card?
 
+    @GestureState private var dragState = DragState.inactive
+
     private static let cardOffset: CGFloat = 50.0
-    
-    var cards: [Card] = testCards
 
     var body: some View {
         VStack {
@@ -60,7 +60,7 @@ struct WalletView: View {
                                             .onEnded { value in
                                                 guard case .second(true, let drag?) = value else { return }
                                                 
-                                                //
+                                                self.rearrangeCards(with: card, dragOffset: drag.translation)
                                             }
                                     )
                             )
@@ -85,7 +85,13 @@ struct WalletView: View {
     private func zIndex(for card: Card) -> Double {
         guard let cardIndex = index(for: card) else { return 0.0 }
         
-        return -Double(cardIndex)
+        let defaultZIndex = -Double(cardIndex)
+        
+        if let draggingIndex = dragState.index, cardIndex == draggingIndex {
+            return defaultZIndex + Double(dragState.translation.height / Self.cardOffset)
+        }
+        
+        return defaultZIndex
     }
     
     private func offset(for card: Card) -> CGSize {
@@ -141,6 +147,17 @@ struct WalletView: View {
         }
         
         return Animation.spring(response: 0.1, dampingFraction: 0.8, blendDuration: 0.02).delay(delay)
+    }
+    
+    private func rearrangeCards(with card: Card, dragOffset: CGSize) {
+        guard let draggingCardIndex = index(for: card) else { return }
+        
+        var newIndex = draggingCardIndex + Int(-dragOffset.height / Self.cardOffset)
+        newIndex = newIndex >= cards.count ? cards.count - 1 : newIndex
+        newIndex = newIndex < 0 ? 0 : newIndex
+        
+        let removedCard = cards.remove(at: draggingCardIndex)
+        cards.insert(removedCard, at: newIndex)
     }
 }
 
