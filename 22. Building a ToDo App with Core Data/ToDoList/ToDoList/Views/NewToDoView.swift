@@ -86,16 +86,13 @@ struct NewToDoView: View {
                 .padding(.bottom, 30)
                 
                 // Save button for adding the todo item
-                Button(action: {
-                    
-                    if self.name.trimmingCharacters(in: .whitespaces) == "" {
-                        return
-                    }
+                Button {
+                    guard self.name.trimmingCharacters(in: .whitespaces) != "" else { return }
                     
                     self.isShow = false
                     self.addTask(name: self.name, priority: self.priority)
                     
-                }) {
+                } label: {
                     Text("Save")
                         .font(.system(.headline, design: .rounded))
                         .frame(minWidth: 0, maxWidth: .infinity)

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1674E3D9263FD60F001F858C /* ToDoListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1674E3D8263FD60F001F858C /* ToDoListRow.swift */; };
 		F462FE3224FCC315006875E2 /* ToDoListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F462FE3124FCC315006875E2 /* ToDoListApp.swift */; };
 		F462FE3424FCC315006875E2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F462FE3324FCC315006875E2 /* ContentView.swift */; };
 		F462FE3624FCC316006875E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F462FE3524FCC316006875E2 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1674E3D8263FD60F001F858C /* ToDoListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListRow.swift; sourceTree = "<group>"; };
 		F462FE2E24FCC315006875E2 /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F462FE3124FCC315006875E2 /* ToDoListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListApp.swift; sourceTree = "<group>"; };
 		F462FE3324FCC315006875E2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -88,8 +90,9 @@
 			isa = PBXGroup;
 			children = (
 				F462FE3324FCC315006875E2 /* ContentView.swift */,
-				F462FE4224FCC359006875E2 /* CheckBoxStyle.swift */,
 				F462FE4424FCC383006875E2 /* NewToDoView.swift */,
+				1674E3D8263FD60F001F858C /* ToDoListRow.swift */,
+				F462FE4224FCC359006875E2 /* CheckBoxStyle.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 				F462FE3424FCC315006875E2 /* ContentView.swift in Sources */,
 				F462FE4724FCC39E006875E2 /* ToDoItem.swift in Sources */,
 				F462FE3224FCC315006875E2 /* ToDoListApp.swift in Sources */,
+				1674E3D9263FD60F001F858C /* ToDoListRow.swift in Sources */,
 				F462FE4524FCC383006875E2 /* NewToDoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

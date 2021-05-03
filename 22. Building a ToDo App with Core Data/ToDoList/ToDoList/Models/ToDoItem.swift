@@ -13,6 +13,7 @@ enum Priority: Int {
     case high = 2
 }
 
+// ToDoItem might be the @StateObject
 class ToDoItem: ObservableObject, Identifiable {
     var id = UUID()
     @Published var name: String = ""
