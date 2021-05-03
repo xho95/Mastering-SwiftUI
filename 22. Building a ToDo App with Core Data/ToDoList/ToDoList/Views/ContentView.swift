@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
-        
-    @State var todoItems: [ToDoItem] = []
+    @Environment(\.managedObjectContext) var context
+
+    //@State var todoItems: [ToDoItem] = []
+    @FetchRequest(
+        entity: ToDoItem.entity(),
+        sortDescriptors: [NSSortDescriptor(keyPath: \ToDoItem.priorityNum, ascending: false)])
+    var todoItems: FetchedResults<ToDoItem>
     
     @State private var newItemName: String = ""
     @State private var newItemPriority: Priority = .normal
@@ -38,12 +43,11 @@ struct ContentView: View {
                 }
                 .padding()
                 
-                List {
-                    
+                List {                    
                     ForEach(todoItems) { todoItem in
                         ToDoListRow(todoItem: todoItem)
                     }
-                                       
+                    .onDelete(perform: deleteTask)
                 }
             }
             .rotation3DEffect(Angle(degrees: showNewTask ? 5 : 0), axis: (x: 1, y: 0, z: 0))
@@ -63,19 +67,33 @@ struct ContentView: View {
                         self.showNewTask = false
                     }
                 
-                NewToDoView(isShow: $showNewTask, todoItems: $todoItems, name: "", priority: .normal)
+                NewToDoView(isShow: $showNewTask, name: "", priority: .normal)
                     .transition(.move(edge: .bottom))
                     .animation(.interpolatingSpring(stiffness: 200.0, damping: 25.0, initialVelocity: 10.0))
             }
         }
     }
     
-
+    private func deleteTask(indexSet: IndexSet) {
+        for index in indexSet {
+            let itemToDelete = todoItems[index]
+            context.delete(itemToDelete)
+        }
+        
+        DispatchQueue.main.async {
+            do {
+                try context.save()
+            } catch {
+                print(error)
+            }
+        }
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
 

@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ToDoListRow: View {
-    
+    @Environment(\.managedObjectContext) var context
+
     @ObservedObject var todoItem: ToDoItem
     
     var body: some View {
@@ -25,7 +26,13 @@ struct ToDoListRow: View {
                     .frame(width: 10, height: 10)
                     .foregroundColor(self.color(for: self.todoItem.priority))
             }
-        }.toggleStyle(CheckboxStyle())
+        }
+        .toggleStyle(CheckboxStyle())
+        .onReceive(todoItem.objectWillChange) { _ in
+            if self.context.hasChanges {
+                try? self.context.save()
+            }
+        }
     }
     
     private func color(for priority: Priority) -> Color {
@@ -39,6 +46,6 @@ struct ToDoListRow: View {
 
 struct ToDoListRow_Previews: PreviewProvider {
     static var previews: some View {
-        ToDoListRow(todoItem: ToDoItem(name: ""))
+        ToDoListRow(todoItem: ToDoItem())
     }
 }
