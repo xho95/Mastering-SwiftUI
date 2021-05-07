@@ -43,7 +43,9 @@ struct ContentView: View {
                     .padding(.top, -20)
                 
                 List {
-                    ForEach(todoItems) { todoItem in
+                    ForEach(
+                        todoItems.filter({ searchText.isEmpty ? true : $0.name.contains(searchText) })
+                    ) { todoItem in
                         ToDoListRow(todoItem: todoItem)
                     }
                     .onDelete(perform: deleteTask)
