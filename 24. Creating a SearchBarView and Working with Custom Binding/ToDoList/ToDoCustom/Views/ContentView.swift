@@ -71,61 +71,7 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-struct FilteredList: View {
 
-    @Environment(\.managedObjectContext) var context
-
-    @Binding var searchText: String
-
-    var fetchRequest: FetchRequest<ToDoItem>
-    var todoItems: FetchedResults<ToDoItem> {
-        fetchRequest.wrappedValue
-    }
-    
-    init(_ searchText: Binding<String>) {
-        self._searchText = searchText
-        
-        let predicate = searchText.wrappedValue.isEmpty ? NSPredicate(value: true) : NSPredicate(format: "name CONTAINS[c] %@", searchText.wrappedValue)
-        
-        self.fetchRequest = FetchRequest(entity: ToDoItem.entity(),
-                                         sortDescriptors: [ NSSortDescriptor(keyPath: \ToDoItem.priorityNum, ascending: false) ],
-                                         predicate: predicate,
-                                         animation: .default)
-    }
-    
-    var body: some View {
-        
-        ZStack {
-            List {
-                    
-                ForEach(todoItems) { todoItem in
-                    ToDoListRow(todoItem: todoItem)
-                }
-                .onDelete(perform: deleteTask)
-                                       
-            }
-            
-            if todoItems.count == 0 {
-                NoDataView()
-            }
-        }
-        
-        
-    }
-    
-    private func deleteTask(indexSet: IndexSet) {
-        for index in indexSet {
-            let itemToDelete = todoItems[index]
-            context.delete(itemToDelete)
-        }
-        
-        do {
-            try context.save()
-        } catch {
-            print(error)
-        }
-    }
-}
 
 struct BlankView : View {
 
@@ -149,41 +95,4 @@ struct NoDataView: View {
     }
 }
 
-struct ToDoListRow: View {
-    
-    @Environment(\.managedObjectContext) var context
-    
-    @ObservedObject var todoItem: ToDoItem
-    
-    var body: some View {
-        Toggle(isOn: self.$todoItem.isComplete) {
-            HStack {
-                Text(self.todoItem.name)
-                    .strikethrough(self.todoItem.isComplete, color: .black)
-                    .bold()
-                    .animation(.default)
-                
-                Spacer()
-                
-                Circle()
-                    .frame(width: 10, height: 10)
-                    .foregroundColor(self.color(for: self.todoItem.priority))
-            }
-        }
-        .toggleStyle(CheckboxStyle())
-        .onReceive(todoItem.objectWillChange, perform: { _ in
-            if self.context.hasChanges {
-                try? self.context.save()
-            }
-        })
 
-    }
-    
-    private func color(for priority: Priority) -> Color {
-        switch priority {
-        case .high: return .red
-        case .normal: return .orange
-        case .low: return .green
-        }
-    }
-}

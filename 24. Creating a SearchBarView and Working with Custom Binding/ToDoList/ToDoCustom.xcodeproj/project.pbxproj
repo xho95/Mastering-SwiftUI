@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1636617126456BEE0049535F /* ToDoListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1636617026456BEE0049535F /* ToDoListRow.swift */; };
+		1636617326456C730049535F /* FilteredList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1636617226456C730049535F /* FilteredList.swift */; };
 		F462FE3224FCC315006875E2 /* ToDoCustomApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F462FE3124FCC315006875E2 /* ToDoCustomApp.swift */; };
 		F462FE3424FCC315006875E2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F462FE3324FCC315006875E2 /* ContentView.swift */; };
 		F462FE3624FCC316006875E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F462FE3524FCC316006875E2 /* Assets.xcassets */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1636617026456BEE0049535F /* ToDoListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListRow.swift; sourceTree = "<group>"; };
+		1636617226456C730049535F /* FilteredList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredList.swift; sourceTree = "<group>"; };
 		F462FE2E24FCC315006875E2 /* ToDoCustom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoCustom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F462FE3124FCC315006875E2 /* ToDoCustomApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoCustomApp.swift; sourceTree = "<group>"; };
 		F462FE3324FCC315006875E2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -107,6 +111,8 @@
 				F462FE4224FCC359006875E2 /* CheckBoxStyle.swift */,
 				F462FE4424FCC383006875E2 /* NewToDoView.swift */,
 				F462FE4D24FE0B3B006875E2 /* SearchBar.swift */,
+				1636617026456BEE0049535F /* ToDoListRow.swift */,
+				1636617226456C730049535F /* FilteredList.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -182,8 +188,10 @@
 			files = (
 				F462FE4324FCC359006875E2 /* CheckBoxStyle.swift in Sources */,
 				F462FE3424FCC315006875E2 /* ContentView.swift in Sources */,
+				1636617326456C730049535F /* FilteredList.swift in Sources */,
 				F462FE4724FCC39E006875E2 /* ToDoItem.swift in Sources */,
 				F462FE4924FCE58F006875E2 /* Persistence.swift in Sources */,
+				1636617126456BEE0049535F /* ToDoListRow.swift in Sources */,
 				F462FE3224FCC315006875E2 /* ToDoCustomApp.swift in Sources */,
 				F462FE4E24FE0B3B006875E2 /* SearchBar.swift in Sources */,
 				F462FE4524FCC383006875E2 /* NewToDoView.swift in Sources */,
