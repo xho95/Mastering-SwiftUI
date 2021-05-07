@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-        
     @Environment(\.managedObjectContext) var context
     
     @FetchRequest(
@@ -16,27 +15,23 @@ struct ContentView: View {
         sortDescriptors: [ NSSortDescriptor(keyPath: \ToDoItem.priorityNum, ascending: false) ])
     var todoItems: FetchedResults<ToDoItem>
     
-    @State private var newItemName: String = ""
-    @State private var newItemPriority: Priority = .normal
-    
     @State private var showNewTask = false
+    @State private var newItemPriority: Priority = .normal
+    @State private var newItemName: String = ""
+    @State private var searchText = ""
     
     var body: some View {
-        
         ZStack {
-            
             VStack {
-                
                 HStack {
                     Text("ToDo List")
                         .font(.system(size: 40, weight: .black, design: .rounded))
                         
                     Spacer()
                     
-                    Button(action: {
+                    Button {
                         self.showNewTask = true
-                        
-                    }) {
+                    } label: {
                         Image(systemName: "plus.circle.fill")
                             .font(.largeTitle)
                             .foregroundColor(.purple)
@@ -44,8 +39,10 @@ struct ContentView: View {
                 }
                 .padding()
                 
+                SearchBar(text: $searchText)
+                    .padding(.top, -20)
+                
                 List {
-                    
                     ForEach(todoItems) { todoItem in
                         ToDoListRow(todoItem: todoItem)
                     }
@@ -95,7 +92,8 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        ContentView()
+            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
 
@@ -121,41 +119,3 @@ struct NoDataView: View {
     }
 }
 
-struct ToDoListRow: View {
-    
-    @Environment(\.managedObjectContext) var context
-    
-    @ObservedObject var todoItem: ToDoItem
-    
-    var body: some View {
-        Toggle(isOn: self.$todoItem.isComplete) {
-            HStack {
-                Text(self.todoItem.name)
-                    .strikethrough(self.todoItem.isComplete, color: .black)
-                    .bold()
-                    .animation(.default)
-                
-                Spacer()
-                
-                Circle()
-                    .frame(width: 10, height: 10)
-                    .foregroundColor(self.color(for: self.todoItem.priority))
-            }
-        }
-        .toggleStyle(CheckboxStyle())
-        .onReceive(todoItem.objectWillChange, perform: { _ in
-            if self.context.hasChanges {
-                try? self.context.save()
-            }
-        })
-
-    }
-    
-    private func color(for priority: Priority) -> Color {
-        switch priority {
-        case .high: return .red
-        case .normal: return .orange
-        case .low: return .green
-        }
-    }
-}
