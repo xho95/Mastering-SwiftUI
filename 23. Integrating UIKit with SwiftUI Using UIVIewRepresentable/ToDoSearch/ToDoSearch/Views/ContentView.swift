@@ -44,10 +44,10 @@ struct ContentView: View {
                 SearchBar(text: $searchText)
                     .padding(.top, -20)
                 
+                FilteredList($searchText)
+                
+                /*
                 List {
-                    FilteredList($searchText)
-                    
-                    /*
                     ForEach(
                         todoItems
                         //todoItems.filter({ searchText.isEmpty ? true : $0.name.contains(searchText) })
@@ -55,8 +55,8 @@ struct ContentView: View {
                         ToDoListRow(todoItem: todoItem)
                     }
                     .onDelete(perform: deleteTask)
-                    */
                 }
+                 */
             }
             .rotation3DEffect(Angle(degrees: showNewTask ? 5 : 0), axis: (x: 1, y: 0, z: 0))
             .offset(y: showNewTask ? -50 : 0)

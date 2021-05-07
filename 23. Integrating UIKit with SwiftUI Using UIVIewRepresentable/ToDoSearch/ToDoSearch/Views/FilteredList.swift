@@ -21,14 +21,9 @@ struct FilteredList: View {
     init(_ searchText: Binding<String>) {
         self._searchText = searchText   // To assgin a binding, use the underscore
         
-        print(searchText.wrappedValue.isEmpty)
-        
         let predicate = searchText.wrappedValue.isEmpty ?
             NSPredicate(value: true) :
             NSPredicate(format: "name CONTAINS[c] %@", searchText.wrappedValue)
-
-        print(searchText.wrappedValue)
-        print(predicate)
 
         self.fetchRequest = FetchRequest(
             entity: ToDoItem.entity(),

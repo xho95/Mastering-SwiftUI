@@ -40,7 +40,7 @@ struct SearchBar: UIViewRepresentable {
             searchBar.showsCancelButton = true
             text = searchText
             
-            //print("textDidChange: \(text)")
+            print("textDidChange: \(text)")
         }
         
         func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
