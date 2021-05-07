@@ -12,9 +12,16 @@ struct SearchBar: View {
 
     @State private var isEditing = false
     
+    private var searchText: Binding<String> {
+        Binding<String>(
+            get: { self.text.capitalized },
+            set: { self.text = $0 }
+        )
+    }
+    
     var body: some View {
         HStack {
-            TextField("Search ...", text: $text)
+            TextField("Search ...", text: searchText)
                 .padding(7)
                 .padding(.horizontal, 25)
                 .background(Color(.systemGray6))
