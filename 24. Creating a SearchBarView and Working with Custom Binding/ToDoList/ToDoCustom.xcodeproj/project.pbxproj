@@ -110,8 +110,8 @@
 				F462FE3324FCC315006875E2 /* ContentView.swift */,
 				F462FE4224FCC359006875E2 /* CheckBoxStyle.swift */,
 				F462FE4424FCC383006875E2 /* NewToDoView.swift */,
-				F462FE4D24FE0B3B006875E2 /* SearchBar.swift */,
 				1636617026456BEE0049535F /* ToDoListRow.swift */,
+				F462FE4D24FE0B3B006875E2 /* SearchBar.swift */,
 				1636617226456C730049535F /* FilteredList.swift */,
 			);
 			path = Views;
