@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1688E819264527B800C37C76 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1688E818264527B800C37C76 /* SearchBar.swift */; };
 		1688E81B2645433F00C37C76 /* ToDoListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1688E81A2645433F00C37C76 /* ToDoListRow.swift */; };
+		1688E81D26454F1F00C37C76 /* FilteredList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1688E81C26454F1F00C37C76 /* FilteredList.swift */; };
 		F462FE3224FCC315006875E2 /* ToDoSearchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F462FE3124FCC315006875E2 /* ToDoSearchApp.swift */; };
 		F462FE3424FCC315006875E2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F462FE3324FCC315006875E2 /* ContentView.swift */; };
 		F462FE3624FCC316006875E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F462FE3524FCC316006875E2 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		1688E818264527B800C37C76 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		1688E81A2645433F00C37C76 /* ToDoListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListRow.swift; sourceTree = "<group>"; };
+		1688E81C26454F1F00C37C76 /* FilteredList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredList.swift; sourceTree = "<group>"; };
 		F462FE2E24FCC315006875E2 /* ToDoSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F462FE3124FCC315006875E2 /* ToDoSearchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoSearchApp.swift; sourceTree = "<group>"; };
 		F462FE3324FCC315006875E2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				1688E81A2645433F00C37C76 /* ToDoListRow.swift */,
 				F462FE4424FCC383006875E2 /* NewToDoView.swift */,
 				1688E818264527B800C37C76 /* SearchBar.swift */,
+				1688E81C26454F1F00C37C76 /* FilteredList.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 			files = (
 				F462FE4324FCC359006875E2 /* CheckBoxStyle.swift in Sources */,
 				F462FE3424FCC315006875E2 /* ContentView.swift in Sources */,
+				1688E81D26454F1F00C37C76 /* FilteredList.swift in Sources */,
 				F462FE4724FCC39E006875E2 /* ToDoItem.swift in Sources */,
 				F462FE4924FCE58F006875E2 /* Persistence.swift in Sources */,
 				1688E81B2645433F00C37C76 /* ToDoListRow.swift in Sources */,
