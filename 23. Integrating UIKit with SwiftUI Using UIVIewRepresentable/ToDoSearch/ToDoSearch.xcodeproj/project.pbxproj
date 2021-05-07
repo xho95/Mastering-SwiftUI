@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1688E819264527B800C37C76 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1688E818264527B800C37C76 /* SearchBar.swift */; };
 		F462FE3224FCC315006875E2 /* ToDoSearchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F462FE3124FCC315006875E2 /* ToDoSearchApp.swift */; };
 		F462FE3424FCC315006875E2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F462FE3324FCC315006875E2 /* ContentView.swift */; };
 		F462FE3624FCC316006875E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F462FE3524FCC316006875E2 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1688E818264527B800C37C76 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		F462FE2E24FCC315006875E2 /* ToDoSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F462FE3124FCC315006875E2 /* ToDoSearchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoSearchApp.swift; sourceTree = "<group>"; };
 		F462FE3324FCC315006875E2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				F462FE3324FCC315006875E2 /* ContentView.swift */,
 				F462FE4224FCC359006875E2 /* CheckBoxStyle.swift */,
 				F462FE4424FCC383006875E2 /* NewToDoView.swift */,
+				1688E818264527B800C37C76 /* SearchBar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				F462FE4724FCC39E006875E2 /* ToDoItem.swift in Sources */,
 				F462FE4924FCE58F006875E2 /* Persistence.swift in Sources */,
 				F462FE3224FCC315006875E2 /* ToDoSearchApp.swift in Sources */,
+				1688E819264527B800C37C76 /* SearchBar.swift in Sources */,
 				F462FE4524FCC383006875E2 /* NewToDoView.swift in Sources */,
 				F462FE4C24FCE7D2006875E2 /* ToDoSearch.xcdatamodeld in Sources */,
 			);
