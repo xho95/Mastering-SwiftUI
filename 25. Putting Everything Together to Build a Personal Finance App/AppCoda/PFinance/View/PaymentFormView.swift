@@ -9,7 +9,6 @@ import SwiftUI
 import CoreData
 
 struct PaymentFormView: View {
-
     @Environment(\.managedObjectContext) var context
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
@@ -25,7 +24,6 @@ struct PaymentFormView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 0) {
-                
                 // Title bar
                 HStack(alignment: .lastTextBaseline) {
                     Text("New Payment")
@@ -35,9 +33,9 @@ struct PaymentFormView: View {
                     
                     Spacer()
                     
-                    Button(action: {
+                    Button {
                         self.presentationMode.wrappedValue.dismiss()
-                    }) {
+                    } label: {
                         Image(systemName: "multiply")
                             .font(.title)
                             .foregroundColor(.primary)
@@ -71,9 +69,9 @@ struct PaymentFormView: View {
                         .padding(.vertical, 10)
                     
                     HStack(spacing: 0) {
-                        Button(action: {
+                        Button {
                             self.paymentFormViewModel.type = .income
-                        }) {
+                        } label: {
                             Text("Income")
                                 .font(.headline)
                                 .foregroundColor(self.paymentFormViewModel.type == .income ? Color.white : Color.primary)
@@ -82,9 +80,9 @@ struct PaymentFormView: View {
                         .padding()
                         .background(self.paymentFormViewModel.type == .income ? Color("IncomeCard") : Color(.systemBackground))
                         
-                        Button(action: {
+                        Button {
                             self.paymentFormViewModel.type = .expense
-                        }) {
+                        } label: {
                             Text("Expense")
                                 .font(.headline)
                                 .foregroundColor(self.paymentFormViewModel.type == .expense ? Color.white : Color.primary)
@@ -114,10 +112,10 @@ struct PaymentFormView: View {
                 
                 
                 // Save button
-                Button(action: {
+                Button {
                     self.save()
                     self.presentationMode.wrappedValue.dismiss()
-                }) {
+                } label: {
                     Text("Save")
                         .opacity(paymentFormViewModel.isFormInputValid ? 1.0 : 0.5)
                         .font(.headline)
@@ -135,7 +133,6 @@ struct PaymentFormView: View {
             .padding()
         }
         .keyboardAdaptive()
-        
     }
     
     // Save the record using Core Data
@@ -161,10 +158,9 @@ struct PaymentFormView: View {
 
 struct PaymentFormView_Previews: PreviewProvider {
     static var previews: some View {
-        
         let context = PersistenceController.shared.container.viewContext
-        
         let testTrans = PaymentActivity(context: context)
+
         testTrans.paymentId = UUID()
         testTrans.name = ""
         testTrans.amount = 0.0
@@ -178,8 +174,8 @@ struct PaymentFormView_Previews: PreviewProvider {
             
             FormTextField(name: "NAME", placeHolder: "Enter your payment", value: .constant("")).previewLayout(.sizeThatFits)
             
-            ValidationErrorText(text: "Please enter the payment name").previewLayout(.sizeThatFits)
-
+            ValidationErrorText(text: "Please enter the payment name")
+                .previewLayout(.sizeThatFits)
         }
     }
 }
@@ -202,7 +198,6 @@ struct FormTextField: View {
                 .foregroundColor(.primary)
                 .padding()
                 .border(Color("Border"), width: 1.0)
-         
         }
     }
 }
@@ -253,10 +248,8 @@ struct FormTextEditor: View {
 
 
 struct ValidationErrorText: View {
-
     var iconName = "info.circle"
     var iconColor = Color(red: 251/255, green: 128/255, blue: 128/255)
-
     var text = ""
     
     var body: some View {

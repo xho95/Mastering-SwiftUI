@@ -8,7 +8,6 @@
 import Foundation
 
 struct PaymentDetailViewModel {
-    
     var payment: PaymentActivity
     
     var name: String {
@@ -24,7 +23,6 @@ struct PaymentDetailViewModel {
     }
     
     var typeIcon: String {
-        
         let icon: String
         
         switch payment.type {
@@ -56,5 +54,4 @@ struct PaymentDetailViewModel {
     init(payment: PaymentActivity) {
         self.payment = payment
     }
-
 }

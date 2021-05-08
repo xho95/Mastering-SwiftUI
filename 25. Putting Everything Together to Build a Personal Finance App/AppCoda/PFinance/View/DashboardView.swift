@@ -15,7 +15,6 @@ enum TransactionDisplayType {
 }
 
 struct DashboardView: View {
-    
     @Environment(\.managedObjectContext) var context
     
     @FetchRequest(
@@ -28,22 +27,16 @@ struct DashboardView: View {
     
     private var totalIncome: Double {
         let total = paymentActivities
-            .filter {
-                $0.type == .income
-            }.reduce(0) {
-                $0 + $1.amount
-            }
+            .filter { $0.type == .income }
+            .reduce(0) { $0 + $1.amount }
         
         return total
     }
     
     private var totalExpense: Double {
         let total = paymentActivities
-            .filter {
-                $0.type == .expense
-            }.reduce(0) {
-                $0 + $1.amount
-            }
+            .filter { $0.type == .expense }
+            .reduce(0) { $0 + $1.amount }
         
         return total
     }
@@ -52,22 +45,21 @@ struct DashboardView: View {
         return totalIncome - totalExpense
     }
     
-        private var paymentDataForView: [PaymentActivity] {
-            
-            switch listType {
-            case .all:
-                return paymentActivities
-                    .sorted(by: { $0.date.compare($1.date) == .orderedDescending })
-            case .income:
-                return paymentActivities
-                    .filter { $0.type == .income }
-                    .sorted(by: { $0.date.compare($1.date) == .orderedDescending })
-            case .expense:
-                return paymentActivities
-                    .filter { $0.type == .expense }
-                    .sorted(by: { $0.date.compare($1.date) == .orderedDescending })
-            }
+    private var paymentDataForView: [PaymentActivity] {
+        switch listType {
+        case .all:
+            return paymentActivities
+                .sorted(by: { $0.date.compare($1.date) == .orderedDescending })
+        case .income:
+            return paymentActivities
+                .filter { $0.type == .income }
+                .sorted(by: { $0.date.compare($1.date) == .orderedDescending })
+        case .expense:
+            return paymentActivities
+                .filter { $0.type == .expense }
+                .sorted(by: { $0.date.compare($1.date) == .orderedDescending })
         }
+    }
     
     @State private var listType: TransactionDisplayType = .all
     @State private var selectedPaymentActivity: PaymentActivity?
@@ -97,6 +89,7 @@ struct DashboardView: View {
                 // List the transaction records
                 ForEach(paymentDataForView) { transaction in
                     TransactionCellView(transaction: transaction)
+                        .contentShape(RoundedRectangle(cornerRadius: 5))
                         .onTapGesture {
                             self.showPaymentDetails = true
                             self.selectedPaymentActivity = transaction
@@ -126,7 +119,8 @@ struct DashboardView: View {
                         }
                 }
                 .sheet(isPresented: self.$editPaymentDetails) {
-                    PaymentFormView(payment: self.selectedPaymentActivity).environment(\.managedObjectContext, self.context)
+                    PaymentFormView(payment: self.selectedPaymentActivity)
+                        .environment(\.managedObjectContext, self.context)
                 }
 
             }
@@ -147,8 +141,6 @@ struct DashboardView: View {
                     .animation(.easeOut(duration: 0.2))
             }
         }
-        
-
     }
     
     private func delete(payment: PaymentActivity) {
@@ -160,11 +152,9 @@ struct DashboardView: View {
             print("Failed to save the context: \(error.localizedDescription)")
         }
     }
-    
 }
 
 struct DashboardView_Previews: PreviewProvider {
-    
     static var previews: some View {
         
         let context = PersistenceController.shared.container.viewContext
@@ -226,14 +216,13 @@ struct MenuBar<Content>: View where Content: View {
                     .font(.title)
                     .foregroundColor(.primary)
             }
-
+            
             .sheet(isPresented: self.$showPaymentForm, onDismiss: {
                 self.showPaymentForm = false
             }) {
                 self.modalContent()
             }
         }
-
     }
 }
 
@@ -260,7 +249,6 @@ struct TotalBalanceCard: View {
             }
         }
         .frame(height: 200)
-        
     }
 }
 
@@ -369,21 +357,14 @@ struct TransactionHeader: View {
     }
 }
 
-
-
 struct TransactionCellView: View {
-    
     @ObservedObject var transaction: PaymentActivity
 
     var body: some View {
-        
         HStack(spacing: 20) {
-            
             if transaction.isFault {
                 EmptyView()
-           
             }  else {
-            
                 Image(systemName: transaction.type == .income ? "arrowtriangle.up.circle.fill" : "arrowtriangle.down.circle.fill")
                     .font(.title)
                     .foregroundColor(Color(transaction.type == .income ? "IncomeCard" : "ExpenseCard"))
@@ -395,15 +376,15 @@ struct TransactionCellView: View {
                         .font(.system(.caption, design: .rounded))
                         .foregroundColor(.gray)
                 }
-        
+                
                 Spacer()
                 
                 Text((transaction.type == .income ? "+" : "-") + NumberFormatter.currency(from: transaction.amount))
                     .font(.system(.headline, design: .rounded))
             }
         }
-        .padding(.vertical, 5)
-        
+        //.padding(.vertical, 5)
+        .padding(5)
     }
 }
 

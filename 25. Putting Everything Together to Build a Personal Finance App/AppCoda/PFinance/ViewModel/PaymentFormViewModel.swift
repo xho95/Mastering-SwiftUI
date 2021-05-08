@@ -70,5 +70,4 @@ class PaymentFormViewModel: ObservableObject {
             .assign(to: \.isFormInputValid, on: self)
             .store(in: &cancellableSet)
     }
-    
 }

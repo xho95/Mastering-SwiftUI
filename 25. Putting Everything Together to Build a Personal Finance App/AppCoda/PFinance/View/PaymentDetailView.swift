@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct PaymentDetailView: View {
-  
     @Binding var isShow: Bool
     
     let payment: PaymentActivity
@@ -78,11 +77,8 @@ struct PaymentDetailView: View {
                     }
                     .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal)
-                    
                 }
-                
             }
-
         }
     }
 }

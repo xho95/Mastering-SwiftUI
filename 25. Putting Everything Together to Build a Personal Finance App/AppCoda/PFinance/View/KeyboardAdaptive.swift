@@ -9,7 +9,6 @@ import SwiftUI
 import Combine
 
 struct KeyboardAdaptive: ViewModifier {
-  
     @State var currentHeight: CGFloat = 0
 
     func body(content: Content) -> some View {
@@ -19,19 +18,14 @@ struct KeyboardAdaptive: ViewModifier {
     }
 
     private func handleKeyboardEvents() {
+        NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)
+            .compactMap { (notify) in notify.userInfo?["UIKeyboardFrameEndUserInfoKey"] as? CGRect }
+            .map { rect in rect.height }
+            .subscribe(Subscribers.Assign(object: self, keyPath: \.currentHeight))
         
-        NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification
-        ).compactMap { (notification) in
-            notification.userInfo?["UIKeyboardFrameEndUserInfoKey"] as? CGRect
-        }.map { rect in
-            rect.height
-        }.subscribe(Subscribers.Assign(object: self, keyPath: \.currentHeight))
-        
-        NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification
-        ).compactMap { _ in
-            CGFloat.zero
-        }.subscribe(Subscribers.Assign(object: self, keyPath: \.currentHeight))
-
+        NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)
+            .compactMap { _ in CGFloat.zero }
+            .subscribe(Subscribers.Assign(object: self, keyPath: \.currentHeight))
     }
 }
 
