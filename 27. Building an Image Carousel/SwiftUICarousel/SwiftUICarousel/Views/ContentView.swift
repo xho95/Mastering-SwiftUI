@@ -35,10 +35,14 @@ struct ContentView: View {
                             TripCardView(destination: sampleTrips[index].destination,
                                          imageName: sampleTrips[index].image,
                                      isShowDetails: $isCardTapped)
+                                .offset(y: isCardTapped ? -inner.size.height * 0.3 : 0)
                         }
                         .padding(.horizontal, self.isCardTapped ? CGFloat(0) : 20)
                         .opacity(currentTripIndex == index ? 1.0 : 0.7)
                         .frame(width: outer.size.width, height: currentTripIndex == index ? (isCardTapped ? outer.size.height : 450) : 400)
+                        .onTapGesture {
+                            isCardTapped = true
+                        }
                     }
                 }
                 .frame(width: outer.size.width, height: outer.size.height, alignment: .leading)
@@ -59,6 +63,25 @@ struct ContentView: View {
                 )
             }
             .animation(.interpolatingSpring(mass: 0.6, stiffness: 100, damping: 10, initialVelocity: 0.3))
+            
+            if isCardTapped {
+                TripDetailView(destination: sampleTrips[currentTripIndex].destination)
+                    .offset(y: 200)
+                    .transition(.move(edge: .bottom))
+                    .animation(.interpolatingSpring(mass: 0.5, stiffness: 100, damping: 10, initialVelocity: 0.3))
+                
+                Button {
+                    isCardTapped = false
+                } label: {
+                    Image(systemName: "xmark.circle.fill")
+                        .font(.system(size: 30))
+                        .foregroundColor(.black)
+                        .opacity(0.7)
+                        .contentShape(Rectangle())
+                }
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topTrailing)
+                .padding(.trailing)
+            }
         }
     }
 }
