@@ -29,6 +29,7 @@ struct ContentView: View {
                                             image: sampleArticles[index].image,
                                             content: sampleArticles[index].content,
                                             isShowContent: $showContents[index])
+                                .offset(y: showContents[index] ? -inner.frame(in: .global).minY : 0)
                                 .padding(.horizontal, showContents[index] ? 0 : 20)
                                 .opacity(
                                     contentMode == .list || (contentMode == .content && showContents[index]) ? 1 : 0
@@ -40,8 +41,10 @@ struct ContentView: View {
                         .frame(height: showContents[index] ?
                                 fullView.size.height + fullView.safeAreaInsets.top + fullView.safeAreaInsets.bottom :
                                 min(sampleArticles[index].image.size.height / 3, 500))
+                        .animation(.interactiveSpring(response: 0.55, dampingFraction: 0.65, blendDuration: 0.1))
                     }
                 }
+                .frame(width: fullView.size.width)
             }
         }
     }

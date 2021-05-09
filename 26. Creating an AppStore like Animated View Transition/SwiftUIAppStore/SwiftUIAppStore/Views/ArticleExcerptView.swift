@@ -48,7 +48,7 @@ struct ArticleExcerptView: View {
                     }
                 )
         }
-        .foregroundColor(.white)
+        .foregroundColor(Color(UIColor.systemBackground))
     }
 }
 
