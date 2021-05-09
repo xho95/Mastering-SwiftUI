@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		16D7A7222647AC4500F0E47A /* ArticleExcerptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D7A7212647AC4500F0E47A /* ArticleExcerptView.swift */; };
 		16D7A7242647B4D800F0E47A /* ArticleCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D7A7232647B4D800F0E47A /* ArticleCardView.swift */; };
+		16D7A7262647C2EA00F0E47A /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D7A7252647C2EA00F0E47A /* TopBar.swift */; };
 		F4661A6A250A055D00FCBD5D /* SwiftUIAppStoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4661A69250A055D00FCBD5D /* SwiftUIAppStoreApp.swift */; };
 		F4661A6C250A055D00FCBD5D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4661A6B250A055D00FCBD5D /* ContentView.swift */; };
 		F4661A6E250A055E00FCBD5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4661A6D250A055E00FCBD5D /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		16D7A7212647AC4500F0E47A /* ArticleExcerptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleExcerptView.swift; sourceTree = "<group>"; };
 		16D7A7232647B4D800F0E47A /* ArticleCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCardView.swift; sourceTree = "<group>"; };
+		16D7A7252647C2EA00F0E47A /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
 		F4661A66250A055D00FCBD5D /* SwiftUIAppStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIAppStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4661A69250A055D00FCBD5D /* SwiftUIAppStoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIAppStoreApp.swift; sourceTree = "<group>"; };
 		F4661A6B250A055D00FCBD5D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				F4661A6B250A055D00FCBD5D /* ContentView.swift */,
 				16D7A7212647AC4500F0E47A /* ArticleExcerptView.swift */,
 				16D7A7232647B4D800F0E47A /* ArticleCardView.swift */,
+				16D7A7252647C2EA00F0E47A /* TopBar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4661A6C250A055D00FCBD5D /* ContentView.swift in Sources */,
+				16D7A7262647C2EA00F0E47A /* TopBar.swift in Sources */,
 				F4661A6A250A055D00FCBD5D /* SwiftUIAppStoreApp.swift in Sources */,
 				16D7A7242647B4D800F0E47A /* ArticleCardView.swift in Sources */,
 				16D7A7222647AC4500F0E47A /* ArticleExcerptView.swift in Sources */,
