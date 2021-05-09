@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16A2657A26482882005F8312 /* TripDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A2657926482882005F8312 /* TripDetailView.swift */; };
 		F456773624F7655000709C6D /* SwiftUICarouselApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F456773524F7655000709C6D /* SwiftUICarouselApp.swift */; };
 		F456773824F7655000709C6D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F456773724F7655000709C6D /* ContentView.swift */; };
 		F456773A24F7655200709C6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F456773924F7655200709C6D /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		16A2657926482882005F8312 /* TripDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailView.swift; sourceTree = "<group>"; };
 		F456773224F7655000709C6D /* SwiftUICarousel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUICarousel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F456773524F7655000709C6D /* SwiftUICarouselApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUICarouselApp.swift; sourceTree = "<group>"; };
 		F456773724F7655000709C6D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 			children = (
 				F456773724F7655000709C6D /* ContentView.swift */,
 				F456774824F7658900709C6D /* TripCardView.swift */,
+				16A2657926482882005F8312 /* TripDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16A2657A26482882005F8312 /* TripDetailView.swift in Sources */,
 				F456774724F7657400709C6D /* Trip.swift in Sources */,
 				F456774924F7658900709C6D /* TripCardView.swift in Sources */,
 				F456773824F7655000709C6D /* ContentView.swift in Sources */,
