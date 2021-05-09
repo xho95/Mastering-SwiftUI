@@ -11,6 +11,8 @@ struct ContentView: View {
     @State private var isCardTapped = false
     @State private var currentTripIndex = 2
     
+    @GestureState private var dragOffset: CGFloat = 0
+    
     var body: some View {
         GeometryReader { outer in
             HStack(spacing: 0) {
@@ -21,12 +23,28 @@ struct ContentView: View {
                                  isShowDetails: $isCardTapped)
                     }
                     .padding(.horizontal, self.isCardTapped ? CGFloat(0) : 20)
-                    .frame(width: outer.size.width, height: 500)
+                    .opacity(currentTripIndex == index ? 1.0 : 0.7)
+                    .frame(width: outer.size.width, height: currentTripIndex == index ? (isCardTapped ? outer.size.height : 450) : 400)
                 }
             }
             .frame(width: outer.size.width, height: outer.size.height, alignment: .leading)
             .offset(x: -CGFloat(currentTripIndex) * outer.size.width)
+            .offset(x: dragOffset)
+            .gesture(
+                !isCardTapped ? DragGesture()
+                    .updating($dragOffset) { value, state, transaction in
+                        state = value.translation.width
+                    }
+                    .onEnded { value in
+                        let threshold = outer.size.width * 0.65
+                        var newIndex = Int(-value.translation.width / threshold) + currentTripIndex
+                        newIndex = min(max(newIndex, 0), sampleTrips.count - 1)
+                        currentTripIndex = newIndex
+                    }
+                    : nil
+            )
         }
+        .animation(.interpolatingSpring(mass: 0.6, stiffness: 100, damping: 10, initialVelocity: 0.3))
     }
 }
 
