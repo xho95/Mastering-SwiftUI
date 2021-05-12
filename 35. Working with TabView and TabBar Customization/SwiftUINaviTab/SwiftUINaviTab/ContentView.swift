@@ -17,13 +17,21 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             TabView(selection: $selection) {
-                Text("Home Tab")
-                    .font(.system(size: 30, weight: .bold, design: .rounded))
-                    .tabItem {
-                        Image(systemName: "house.fill")
-                        Text("Home")
-                    }
-                    .tag(0)
+                List(1...10, id: \.self) { index in
+                    NavigationLink(
+                        destination: Text("Item #\(index) Details"),
+                        label: {
+                            Text("Item #\(index)")
+                                .font(.system(size: 20, weight: .bold, design: .rounded))
+                        }
+                    )
+                }
+                .tabItem {
+                    Image(systemName: "house.fill")
+                    Text("Home")
+                }
+                .tag(0)
+                
                 Text("Bookmark Tab")
                     .font(.system(size: 30, weight: .bold, design: .rounded))
                     .tabItem {
