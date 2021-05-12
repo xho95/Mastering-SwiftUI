@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    init() {
+        UITabBar.appearance().barTintColor = .yellow
+    }
+    
     var body: some View {
         TabView {
             Text("Home Tab")
@@ -35,6 +39,7 @@ struct ContentView: View {
                     Text("Profile")
                 }
         }
+        .accentColor(.red)
     }
 }
 
