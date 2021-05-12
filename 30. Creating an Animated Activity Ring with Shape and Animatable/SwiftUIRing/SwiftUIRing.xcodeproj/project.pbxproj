@@ -13,6 +13,7 @@
 		16379A34264BE42A00021F85 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16379A33264BE42A00021F85 /* Preview Assets.xcassets */; };
 		16379A3E264BE46F00021F85 /* ProgressRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16379A3D264BE46F00021F85 /* ProgressRing.swift */; };
 		16379A41264BE58500021F85 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16379A40264BE58500021F85 /* Color+Extension.swift */; };
+		16379A43264BE88E00021F85 /* RingShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16379A42264BE88E00021F85 /* RingShape.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		16379A35264BE42A00021F85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16379A3D264BE46F00021F85 /* ProgressRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRing.swift; sourceTree = "<group>"; };
 		16379A40264BE58500021F85 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		16379A42264BE88E00021F85 /* RingShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingShape.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			children = (
 				16379A2E264BE42900021F85 /* ContentView.swift */,
 				16379A3D264BE46F00021F85 /* ProgressRing.swift */,
+				16379A42264BE88E00021F85 /* RingShape.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16379A2F264BE42900021F85 /* ContentView.swift in Sources */,
+				16379A43264BE88E00021F85 /* RingShape.swift in Sources */,
 				16379A41264BE58500021F85 /* Color+Extension.swift in Sources */,
 				16379A2D264BE42900021F85 /* SwiftUIRingApp.swift in Sources */,
 				16379A3E264BE46F00021F85 /* ProgressRing.swift in Sources */,
