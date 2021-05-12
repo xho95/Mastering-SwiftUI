@@ -11,7 +11,8 @@ import SwiftUI
 struct SwiftUIPhotoApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            //ContentView()
+            MultiGridView()
         }
     }
 }
