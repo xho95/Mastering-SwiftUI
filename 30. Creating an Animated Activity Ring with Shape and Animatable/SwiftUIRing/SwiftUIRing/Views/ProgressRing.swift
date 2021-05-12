@@ -10,9 +10,9 @@ import SwiftUI
 struct ProgressRing: View {
     @Binding var progress: Double
     
-    var thickness: CGFloat = 30.0
     var width: CGFloat = 250.0
-    var gradient = Gradient(colors: [.dardPurple, .lightYellow])
+    var thickness: CGFloat = 30.0
+    var gradient = Gradient(colors: [.darkPurple, .lightYellow])
     var startAngle = -90.0
     
     private var radius: Double {

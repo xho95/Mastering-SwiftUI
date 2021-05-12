@@ -11,7 +11,8 @@ import SwiftUI
 struct SwiftUIRingApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            //ContentView()
+            MultiRing()
         }
     }
 }

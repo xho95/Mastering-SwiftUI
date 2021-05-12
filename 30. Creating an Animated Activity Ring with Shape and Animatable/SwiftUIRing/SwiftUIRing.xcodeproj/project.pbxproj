@@ -15,6 +15,7 @@
 		16379A41264BE58500021F85 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16379A40264BE58500021F85 /* Color+Extension.swift */; };
 		16379A43264BE88E00021F85 /* RingShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16379A42264BE88E00021F85 /* RingShape.swift */; };
 		165542C2264BFEDD00823F1E /* RingTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165542C1264BFEDD00823F1E /* RingTip.swift */; };
+		165542C4264C048300823F1E /* MultiRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165542C3264C048300823F1E /* MultiRing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		16379A40264BE58500021F85 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		16379A42264BE88E00021F85 /* RingShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingShape.swift; sourceTree = "<group>"; };
 		165542C1264BFEDD00823F1E /* RingTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingTip.swift; sourceTree = "<group>"; };
+		165542C3264C048300823F1E /* MultiRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiRing.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				16379A3D264BE46F00021F85 /* ProgressRing.swift */,
 				16379A42264BE88E00021F85 /* RingShape.swift */,
 				165542C1264BFEDD00823F1E /* RingTip.swift */,
+				165542C3264C048300823F1E /* MultiRing.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				16379A2F264BE42900021F85 /* ContentView.swift in Sources */,
 				165542C2264BFEDD00823F1E /* RingTip.swift in Sources */,
 				16379A43264BE88E00021F85 /* RingShape.swift in Sources */,
+				165542C4264C048300823F1E /* MultiRing.swift in Sources */,
 				16379A41264BE58500021F85 /* Color+Extension.swift in Sources */,
 				16379A2D264BE42900021F85 /* SwiftUIRingApp.swift in Sources */,
 				16379A3E264BE46F00021F85 /* ProgressRing.swift in Sources */,
