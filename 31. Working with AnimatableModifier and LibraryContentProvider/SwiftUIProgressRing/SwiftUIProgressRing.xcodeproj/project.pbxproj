@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		165542C8264C0B8700823F1E /* RingShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165542C7264C0B8700823F1E /* RingShape.swift */; };
 		165542CA264C0BA600823F1E /* RingTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165542C9264C0BA600823F1E /* RingTip.swift */; };
+		165542CC264C0DA300823F1E /* ProgressTextModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165542CB264C0DA300823F1E /* ProgressTextModifier.swift */; };
 		F4F26FD424CE81D900FF6894 /* SwiftUIProgressRingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F26FD324CE81D900FF6894 /* SwiftUIProgressRingApp.swift */; };
 		F4F26FD624CE81D900FF6894 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F26FD524CE81D900FF6894 /* ContentView.swift */; };
 		F4F26FD824CE81DA00FF6894 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4F26FD724CE81DA00FF6894 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		165542C7264C0B8700823F1E /* RingShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingShape.swift; sourceTree = "<group>"; };
 		165542C9264C0BA600823F1E /* RingTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingTip.swift; sourceTree = "<group>"; };
+		165542CB264C0DA300823F1E /* ProgressTextModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTextModifier.swift; sourceTree = "<group>"; };
 		F4F26FD024CE81D900FF6894 /* SwiftUIProgressRing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIProgressRing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4F26FD324CE81D900FF6894 /* SwiftUIProgressRingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIProgressRingApp.swift; sourceTree = "<group>"; };
 		F4F26FD524CE81D900FF6894 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 				F4F26FE524CFF65F00FF6894 /* ProgressRingView.swift */,
 				165542C7264C0B8700823F1E /* RingShape.swift */,
 				165542C9264C0BA600823F1E /* RingTip.swift */,
+				165542CB264C0DA300823F1E /* ProgressTextModifier.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				165542CC264C0DA300823F1E /* ProgressTextModifier.swift in Sources */,
 				F4F26FD624CE81D900FF6894 /* ContentView.swift in Sources */,
 				165542CA264C0BA600823F1E /* RingTip.swift in Sources */,
 				165542C8264C0B8700823F1E /* RingShape.swift in Sources */,

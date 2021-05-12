@@ -26,26 +26,14 @@ struct ProgressRingView: View {
         return CGPoint(x: shadowPosition.x - circlePosition.x, y: shadowPosition.y - circlePosition.y)
     }
     
-    private var progressText: String {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .percent
-        formatter.percentSymbol = "%"
-        
-        return formatter.string(from: NSNumber(value: progress)) ?? ""
-    }
-    
     var body: some View {
         ZStack {
             Circle()
                 .stroke(Color(.systemGray6), lineWidth: thickness)
-            
-            Text(progressText)
-                .font(.system(.largeTitle, design: .rounded))
-                .fontWeight(.bold)
-                .foregroundColor(.primary)
 
             RingShape(progress: progress, thickness: thickness)
                 .fill(AngularGradient(gradient: gradient, center: .center, startAngle: .degrees(startAngle), endAngle: .degrees(360 * progress + startAngle)))
+                .progressText(progress: progress)
             
             RingTip(progress: progress, startAngle: startAngle, ringRadius: radius)
                 .frame(width: thickness, height: thickness)
