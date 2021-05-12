@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct MultiGridView: View {
-    @State private var gridLayout = [GridItem()]
+    @State private var gridLayout = [
+        GridItem(.adaptive(minimum: 100)), GridItem(.flexible())
+    ]
     
     var body: some View {
         NavigationView {
