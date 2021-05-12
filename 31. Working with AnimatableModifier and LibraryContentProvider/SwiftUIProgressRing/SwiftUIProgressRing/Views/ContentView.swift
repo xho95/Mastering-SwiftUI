@@ -26,7 +26,7 @@ struct ContentView: View {
                 ProgressRingView(progress: $progress,
                                  thickness: 30,
                                  width: 170,
-                                 gradient: Gradient(colors: [.darkGreen, .lightGreen]))
+                                 gradient: Gradient(colors: [.darkGreen, .lightGreen]))                
             }
             
             HStack {
