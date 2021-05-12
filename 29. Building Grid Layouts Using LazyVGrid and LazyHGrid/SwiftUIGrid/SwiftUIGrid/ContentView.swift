@@ -18,11 +18,15 @@ struct ContentView: View {
 //        GridItem(.flexible(), spacing: 0), GridItem(.flexible(), spacing: 0), GridItem(.flexible(), spacing: 0)
 //    ]
 
-    private var gridItemLayout = Array(repeating: GridItem(.flexible(), spacing: 0), count: 3)
+//    private var gridItemLayout = [GridItem(.adaptive(minimum: 50))]
     
+//    private var gridItemLayout = [GridItem(.fixed(100)), GridItem(.fixed(150))]
+
+    private var gridItemLayout = [GridItem(.fixed(150)), GridItem(.adaptive(minimum: 50))]
+
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: gridItemLayout, spacing: 0) {
+            LazyVGrid(columns: gridItemLayout, spacing: 20) {
                 ForEach(0...9999, id: \.self) {
                     Image(systemName: symbols[$0 % symbols.count])
                         .font(.system(size: 30))
