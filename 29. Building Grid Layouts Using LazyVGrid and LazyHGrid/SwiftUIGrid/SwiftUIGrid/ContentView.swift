@@ -25,13 +25,13 @@ struct ContentView: View {
     private var gridItemLayout = [GridItem(.fixed(150)), GridItem(.adaptive(minimum: 50))]
 
     var body: some View {
-        ScrollView {
-            LazyVGrid(columns: gridItemLayout, spacing: 20) {
+        ScrollView(.horizontal) {
+            LazyHGrid(rows: gridItemLayout, spacing: 20) {
                 ForEach(0...9999, id: \.self) {
                     Image(systemName: symbols[$0 % symbols.count])
                         .font(.system(size: 30))
                         //.frame(width: 50, height: 50)
-                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 50)
+                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 50, maxHeight: .infinity)
                         .background(colors[$0 % colors.count])
                         .cornerRadius(10)
                 }
