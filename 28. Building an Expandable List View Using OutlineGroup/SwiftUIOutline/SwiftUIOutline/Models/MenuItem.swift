@@ -40,8 +40,8 @@ let espressoMachineMenuItems = [
         MenuItem(name: "Linea Classic", image: "linea-classic"),
     ]),
     MenuItem(name: "GB5", image: "gb5"),
-    MenuItem(name: "Home", image: "gb3", subMenuItems: [
-        MenuItem(name: "GB3", image: "gb3"),
+    MenuItem(name: "Home", image: "gs3", subMenuItems: [
+        MenuItem(name: "GS3", image: "gs3"),
         MenuItem(name: "Linea Mini", image: "linea-mini"),
     ]),
 ]
