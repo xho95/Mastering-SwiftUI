@@ -10,6 +10,7 @@
 		165542C8264C0B8700823F1E /* RingShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165542C7264C0B8700823F1E /* RingShape.swift */; };
 		165542CA264C0BA600823F1E /* RingTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165542C9264C0BA600823F1E /* RingTip.swift */; };
 		165542CC264C0DA300823F1E /* ProgressTextModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165542CB264C0DA300823F1E /* ProgressTextModifier.swift */; };
+		165542CF264C0FEF00823F1E /* ProgressRingLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165542CE264C0FEF00823F1E /* ProgressRingLibrary.swift */; };
 		F4F26FD424CE81D900FF6894 /* SwiftUIProgressRingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F26FD324CE81D900FF6894 /* SwiftUIProgressRingApp.swift */; };
 		F4F26FD624CE81D900FF6894 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F26FD524CE81D900FF6894 /* ContentView.swift */; };
 		F4F26FD824CE81DA00FF6894 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4F26FD724CE81DA00FF6894 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 		165542C7264C0B8700823F1E /* RingShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingShape.swift; sourceTree = "<group>"; };
 		165542C9264C0BA600823F1E /* RingTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingTip.swift; sourceTree = "<group>"; };
 		165542CB264C0DA300823F1E /* ProgressTextModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTextModifier.swift; sourceTree = "<group>"; };
+		165542CE264C0FEF00823F1E /* ProgressRingLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRingLibrary.swift; sourceTree = "<group>"; };
 		F4F26FD024CE81D900FF6894 /* SwiftUIProgressRing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIProgressRing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4F26FD324CE81D900FF6894 /* SwiftUIProgressRingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIProgressRingApp.swift; sourceTree = "<group>"; };
 		F4F26FD524CE81D900FF6894 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,6 +64,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		165542CD264C0FD400823F1E /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				165542CE264C0FEF00823F1E /* ProgressRingLibrary.swift */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
 		F4F26FC724CE81D900FF6894 = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				F4F26FD324CE81D900FF6894 /* SwiftUIProgressRingApp.swift */,
+				165542CD264C0FD400823F1E /* Libraries */,
 				F4F26FE224CE83E200FF6894 /* Extensions */,
 				165542C5264C0A9100823F1E /* Models */,
 				165542C6264C0A9600823F1E /* Views */,
@@ -183,6 +194,7 @@
 				165542C8264C0B8700823F1E /* RingShape.swift in Sources */,
 				F4F26FE624CFF65F00FF6894 /* ProgressRingView.swift in Sources */,
 				F4F26FD424CE81D900FF6894 /* SwiftUIProgressRingApp.swift in Sources */,
+				165542CF264C0FEF00823F1E /* ProgressRingLibrary.swift in Sources */,
 				F4F26FE424CE83F200FF6894 /* Color+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
