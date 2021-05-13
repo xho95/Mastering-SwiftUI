@@ -11,8 +11,29 @@ struct ContentView: View {
     @State private var photoSet = samplePhotos
     
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            ScrollView {
+                HStack {
+                    Text("Photos")
+                        .font(.system(.title, design: .rounded))
+                        .fontWeight(.heavy)
+                    
+                    Spacer()
+                }
+                
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 50))]) {
+                    ForEach(photoSet) { photo in
+                        Image(photo.name)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(minWidth: 0, maxWidth: .infinity)
+                            .frame(height: 60)
+                            .cornerRadius(3.0)
+                    }
+                }
+            }
+        }
+        .padding()
     }
 }
 
