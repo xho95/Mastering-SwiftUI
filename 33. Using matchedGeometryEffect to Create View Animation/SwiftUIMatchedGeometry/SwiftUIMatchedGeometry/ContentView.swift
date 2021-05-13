@@ -8,17 +8,32 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Namespace private var shapeTransition
+    
     @State private var expand = false
     
     var body: some View {
-        Circle()
-            .fill(Color.green)
-            .frame(width: expand ? 300 : 150, height: expand ? 300 : 150)
-            .offset(y: expand ? -200 : 0)
-            .animation(.default)
-            .onTapGesture {
-                expand.toggle()
-            }
+        if expand {         // final state
+            Circle()
+                .fill(Color.green)
+                .matchedGeometryEffect(id: "circle", in: shapeTransition)
+                .frame(width: 300, height: 300)
+                .offset(y: -200)
+                .animation(.default)
+                .onTapGesture {
+                    expand.toggle()
+                }
+        } else {            // initial state
+            Circle()
+                .fill(Color.green)
+                .matchedGeometryEffect(id: "circle", in: shapeTransition)
+                .frame(width: 150, height: 150)
+                .offset(y: 0)
+                .animation(.default)
+                .onTapGesture {
+                    expand.toggle()
+                }
+        }
     }
 }
 
