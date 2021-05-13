@@ -32,6 +32,14 @@ struct ContentView: View {
                     }
                 }
             }
+            
+            ScrollView(.horizontal, showsIndicators: false) {
+                //
+            }
+            .frame(height: 100)
+            .padding()
+            .background(Color(.systemGray6))
+            .cornerRadius(5)
         }
         .padding()
     }
