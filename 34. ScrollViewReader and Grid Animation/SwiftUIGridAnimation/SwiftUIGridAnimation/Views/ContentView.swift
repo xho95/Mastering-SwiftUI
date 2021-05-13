@@ -45,29 +45,37 @@ struct ContentView: View {
                 }
             }
             
-            ScrollView(.horizontal, showsIndicators: false) {
-                LazyHGrid(rows: [GridItem()]) {
-                    ForEach(selectedPhotos) { photo in
-                        Image(photo.name)
-                            .resizable()
-                            .scaledToFill()
-                            .frame(minWidth: 0, maxWidth: .infinity)
-                            .frame(height: 100)
-                            .cornerRadius(3.0)
-                            .onTapGesture {
-                                photoSet.append(photo)
-                                if let index = selectedPhotos.firstIndex(where: { $0.id == photo.id }) {
-                                    selectedPhotos.remove(at: index)
+            ScrollViewReader { scrollProxy in
+                ScrollView(.horizontal, showsIndicators: false) {
+                    LazyHGrid(rows: [GridItem()]) {
+                        ForEach(selectedPhotos) { photo in
+                            Image(photo.name)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(minWidth: 0, maxWidth: .infinity)
+                                .frame(height: 100)
+                                .cornerRadius(3.0)
+                                .onTapGesture {
+                                    photoSet.append(photo)
+                                    if let index = selectedPhotos.firstIndex(where: { $0.id == photo.id }) {
+                                        selectedPhotos.remove(at: index)
+                                    }
                                 }
-                            }
-                            .matchedGeometryEffect(id: photo.id, in: photoTransition)
+                                .matchedGeometryEffect(id: photo.id, in: photoTransition)
+                                .id(photo.id)
+                        }
                     }
                 }
+                .frame(height: 100)
+                .padding()
+                .background(Color(.systemGray6))
+                .cornerRadius(5)
+                .onChange(of: selectedPhotoID) { id in
+                    guard id != nil else { return }
+                    
+                    scrollProxy.scrollTo(id)
+                }
             }
-            .frame(height: 100)
-            .padding()
-            .background(Color(.systemGray6))
-            .cornerRadius(5)
         }
         .padding()
         .animation(.interactiveSpring())
