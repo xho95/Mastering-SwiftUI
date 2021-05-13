@@ -14,25 +14,28 @@ struct ContentView: View {
     
     var body: some View {
         if expand {         // final state
-            Circle()
-                .fill(Color.green)
+            Spacer()
+            
+            RoundedRectangle(cornerRadius: 50.0)
                 .matchedGeometryEffect(id: "circle", in: shapeTransition)
-                .frame(width: 300, height: 300)
-                .offset(y: -200)
-                .animation(.default)
+                .frame(minWidth: 0, maxWidth: .infinity, maxHeight: 300)
+                .padding()
+                .foregroundColor(Color(.systemGreen))
+                .animation(.easeIn)
                 .onTapGesture {
                     expand.toggle()
                 }
         } else {            // initial state
-            Circle()
-                .fill(Color.green)
+            RoundedRectangle(cornerRadius: 50.0)
                 .matchedGeometryEffect(id: "circle", in: shapeTransition)
-                .frame(width: 150, height: 150)
-                .offset(y: 0)
-                .animation(.default)
+                .frame(width: 100, height: 100)
+                .foregroundColor(Color(.systemOrange))
+                .animation(.easeIn)
                 .onTapGesture {
                     expand.toggle()
                 }
+            
+            Spacer()
         }
     }
 }
