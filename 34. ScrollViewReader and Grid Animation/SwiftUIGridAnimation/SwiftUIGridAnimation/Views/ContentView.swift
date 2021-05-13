@@ -12,6 +12,8 @@ struct ContentView: View {
     @State private var selectedPhotos = [Photo]()
     @State private var selectedPhotoID: UUID?
     
+    @Namespace private var photoTransition
+    
     var body: some View {
         VStack {
             ScrollView {
@@ -38,6 +40,7 @@ struct ContentView: View {
                                     photoSet.remove(at: index)
                                 }
                             }
+                            .matchedGeometryEffect(id: photo.id, in: photoTransition)
                     }
                 }
             }
@@ -57,6 +60,7 @@ struct ContentView: View {
                                     selectedPhotos.remove(at: index)
                                 }
                             }
+                            .matchedGeometryEffect(id: photo.id, in: photoTransition)
                     }
                 }
             }
@@ -66,6 +70,7 @@ struct ContentView: View {
             .cornerRadius(5)
         }
         .padding()
+        .animation(.interactiveSpring())
     }
 }
 
