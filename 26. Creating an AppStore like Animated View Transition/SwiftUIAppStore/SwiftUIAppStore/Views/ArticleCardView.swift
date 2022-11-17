@@ -44,8 +44,10 @@ struct ArticleCardView: View {
                                 .font(.system(.body, design: .rounded))
                                 .padding(.horizontal)
                                 .padding(.bottom, 50)
-                                .transition(.move(edge: .top))
-                                .animation(.linear)
+//                                .transition(.move(edge: .top))
+//                                .animation(.linear)
+                            // Remove the transaction 
+                                .transaction { $0.animation = nil }
                         }
                     }
                 }

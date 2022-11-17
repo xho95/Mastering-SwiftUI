@@ -42,6 +42,8 @@ struct ArticleExcerptView: View {
                                     .lineLimit(3)
                             }
                         }
+                        // Remove the transaction
+                        .transaction { $0.animation = nil }
                         .padding()
                         
                         Spacer()

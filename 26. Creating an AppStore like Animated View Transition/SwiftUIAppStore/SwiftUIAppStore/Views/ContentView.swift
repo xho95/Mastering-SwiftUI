@@ -13,6 +13,7 @@ struct ContentView: View {
     private var contentMode: ContentMode {
         self.showContents.contains(true) ? .content : .list
     }
+    
     var body: some View {
         GeometryReader { fullView in
             ScrollView {
@@ -21,7 +22,7 @@ struct ContentView: View {
                         .padding(.horizontal, 20)
                         .opacity(contentMode == .content ? 0 : 1)
                     
-                    ForEach(sampleArticles.indices) { index in
+                    ForEach(sampleArticles.indices, id: \.self) { index in
                         GeometryReader { inner in
                             ArticleCardView(category: sampleArticles[index].category,
                                             headline: sampleArticles[index].headline,

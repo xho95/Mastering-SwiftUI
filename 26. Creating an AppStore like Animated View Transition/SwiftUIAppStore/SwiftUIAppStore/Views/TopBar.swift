@@ -25,7 +25,7 @@ struct TopBar: View {
         }
     }
     
-    private func getCurrentDate(with format: String = "EEEE, MMM d") -> String {
+    private func getCurrentDate(with format: String = "EEEE d MMMM") -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format
         return dateFormatter.string(from: Date())
